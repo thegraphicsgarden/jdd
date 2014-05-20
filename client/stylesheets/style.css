@@ -1,2 +1,94 @@
-h1 {
-  color: green; }
+@font-face {
+  font-family: 'Univers';
+  src: url("../fonts/univers57condensed.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/univers57condensed.eot?#iefix") format("embedded-opentype"), url("../fonts/univers57condensed.woff") format("woff"), url("../fonts/univers57condensed.ttf") format("truetype"), url("../fonts/univers57condensed.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'UniversLight';
+  src: url("../fonts/Univers47CondensedLight.ttf") format("truetype");
+  /* Safari, Android, iOS */ }
+
+body {
+  font-family: "UniversLight", "Univers", sans-serif !important; }
+
+a {
+  color: #00aab5; }
+  a:hover {
+    text-decoration: none; }
+
+.clear {
+  clear: both; }
+  .clear.twenty {
+    margin-top: 20px; }
+  .clear.forty {
+    margin-top: 40px; }
+
+.centered {
+  text-align: center; }
+
+.btn {
+  border-radius: 0; }
+
+.btn-primary {
+  background: #902a2a;
+  border: none;
+  max-width: 512px; }
+
+ul {
+  list-style: none;
+  padding-left: 0; }
+
+ul.most {
+  font-size: 1.2em;
+  line-height: 100%; }
+  ul.most li {
+    margin-bottom: 23px; }
+
+#nav {
+  height: 80px; }
+
+#slider {
+  height: 400px; }
+  #slider h1, #slider h2, #slider h3 {
+    margin: 0 auto; }
+  #slider h1 {
+    font-size: 4.3em; }
+  #slider h2 {
+    font-size: 1.4em; }
+  #slider h3 {
+    font-size: 1em; }
+
+#articlesList {
+  color: #909090; }
+  #articlesList h3 {
+    font-size: 1.3em;
+    letter-spacing: -1px; }
+    #articlesList h3 a {
+      color: #902a2a; }
+  #articlesList p {
+    font-size: .9em;
+    line-height: 100%; }
+
+#featuredArticle h1 {
+  font-size: 4.3em;
+  line-height: 90%; }
+
+#sidebar h3 {
+  margin-bottom: 10px; }
+  #sidebar h3 span {
+    color: #a77030; }
+#sidebar .btn-primary {
+  width: 300px;
+  height: 60px;
+  margin-bottom: 40px; }
+
+#footer {
+  background: #231f20;
+  color: white;
+  padding-top: 100px; }
+  #footer #copyright {
+    margin: 70px auto 30px; }
+  #footer h3 span {
+    color: #a77030; }

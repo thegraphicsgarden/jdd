@@ -1,0 +1,100 @@
+<template name="footer">
+    <div class="container">
+       <div class="col-sm-2">
+        <h3>Content</h3>
+        <ul>
+            {{#each content}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>Journal</h3>
+        <ul>
+            {{#each journalOptions}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-sm-2">
+        <h3>Articles</h3>
+        <ul>
+            {{#each articleOptions}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>Topics</h3>
+        <ul>
+            {{#each topics}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-sm-2">
+        <h3>CME</h3>
+        <ul>
+            {{#each cme}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>DermMatters</h3>
+        <ul>
+            {{#each dermMatters}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>Multimedia</h3>
+        <ul>
+            {{#each multimediaOptions}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>Resources</h3>
+        <ul>
+            {{#each resources}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-sm-2">
+        <h3>Contact</h3>
+        <ul>
+            {{#each contact}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+        <h3>Subscribe</h3>
+        <ul>
+            {{#each subscribeOptions}}
+            <li><a href="#">{{.}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <div class="col-sm-6">
+            <h3><span>Current</span> Issue</h3>
+            <img alt="Current Issue" src="http://devjb1.sanovaworks.com/JDD/site/images/issue1.jpg" />
+        </div>
+        <div class="col-sm-6">
+            <h3><span>Past</span> Issue</h3>
+            <img alt="Past Issue" src="http://devjb1.sanovaworks.com/JDD/site/images/issue2.jpg" />
+        </div>
+        <div class="col-sm-12">
+            <h3><span>Most</span> Read <span>/</span> Most Cited</h3>
+            <ul class="most">
+                {{#each mostRead}}
+                <li>{{title}} <a href="{{url}}">read</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div id="copyright" class="col-sm-12">
+        <div class="col-sm-9">
+            <p>377 Park Avenue South, 6th Floor, New York, NY 10016 - Phone: (212) 213-5434 Fax: (212) 213-5435<br/>Copyright © 2014 Journal of Drugs in Dermatology.  All Rights Reserved.</p>
+        </div>
+        <div class="col-sm-3">
+            <p>Logo Here</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+    </div><!--container-->
+</template>

@@ -1,15 +1,33 @@
 <body>
-	<div class="container">
-		<header class="navbar">
-			<div class="navbar-inner">
-				<a class="brand" href="/">Microscope</a>
-			</div>
-		</header>
-		<div id="main" class="row-fluid">
-			{{> articlesList}}
-		</div>
-		<footer>
-			<p>Copyright &copy; 2014</p>
-		</footer>
+    {{> header}}
+
+	<div id="articlesList" class="col-sm-2" style="display: none;">
+		{{> articlesList}}
 	</div>
+
+	<section id="slider" class="col-sm-12">
+		<hgroup>
+			<span>View</span><span>Our</span>
+			<h1>Current Issue</h1>
+			<h2>Anti-Aging | Aesthetic | Medical Dermatology</h2>
+			<h3>Skin of Color | April 2014 | Volume 13 | Issue 4</h3>
+		</hgroup>
+	</section>
+
+	<div class="container">
+		<article id="featuredArticle" class="col-sm-8">
+			<header>
+				<h1>What is New in Fungal Pharmacotherapeutics?</h1>
+				{{authors}}
+			</header>
+		</article>
+
+		<aside id="sidebar" class="col-sm-4">
+			{{> sidebar}}
+		</aside>
+	</div><!--container-->
+	<div class="clear"></div>
+	<footer id="footer">
+		{{> footer}}
+	</footer>
 </body>

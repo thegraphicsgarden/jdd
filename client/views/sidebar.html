@@ -1,0 +1,25 @@
+<template name="sidebar">
+	<header>
+		<h3><span>Subscribe</span> to</h3>
+	</header>
+	<a href="#" class="btn btn-primary">JDD Now</a>
+
+	<a href="#"><img alt="" src="http://devjb1.sanovaworks.com/JDD/site/images/luzu.jpg" /></a>
+
+	<h3><span>Most</span> Read / Most Cited</h3>
+	<ul class="most">
+    	{{#each mostRead}}
+      		<li>{{title}} <a href="{{url}}">read</a></li>
+    	{{/each}}
+	</ul>
+
+	<h3><span>Derm</span> Pearls</h3>
+	<a href="#"><img alt="" src="http://devjb1.sanovaworks.com/JDD/site/images/dearmpearl.jpg" /></a>
+
+	<div class="clear forty"></div>
+	<div class="col-xs-12 centered">
+		<a href="#"><img alt="" src="http://devjb1.sanovaworks.com/JDD/site/images/carac.jpg" /></a>
+	</div>
+	<div class="clear forty"></div>
+	
+</template>
