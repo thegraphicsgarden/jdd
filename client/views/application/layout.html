@@ -1,33 +1,35 @@
 <body>
-    {{> header}}
-
-	<div id="articlesList" class="col-sm-2" style="display: none;">
+	{{> header}}
+	<div id="articlesList" class="col-sm-2">
 		{{> articlesList}}
 	</div>
 
-	<section id="slider" class="col-sm-12">
-		<hgroup>
-			<span>View</span><span>Our</span>
-			<h1>Current Issue</h1>
-			<h2>Anti-Aging | Aesthetic | Medical Dermatology</h2>
-			<h3>Skin of Color | April 2014 | Volume 13 | Issue 4</h3>
-		</hgroup>
-	</section>
+	<div id="main" class="col-sm-10" style="">
+		<section id="slider" class="col-sm-12">
+			{{> slider}}
+		</section>
 
-	<div class="container">
-		<article id="featuredArticle" class="col-sm-8">
-			<header>
-				<h1>What is New in Fungal Pharmacotherapeutics?</h1>
-				{{authors}}
-			</header>
-		</article>
+		<div class="container">
+			<article id="featuredArticle" class="col-sm-8">
+				{{> featuredArticle}}
+				<img src="/images/bottom-ad.png" />
+			</article>
 
-		<aside id="sidebar" class="col-sm-4">
-			{{> sidebar}}
-		</aside>
-	</div><!--container-->
+			<aside id="sidebar" class="col-sm-4">
+				{{> sidebar}}
+			</aside>
+		</div><!--container-->
+	</div>
+
 	<div class="clear"></div>
 	<footer id="footer">
 		{{> footer}}
 	</footer>
+
+	<script>
+		
+
+
+		
+	</script>
 </body>

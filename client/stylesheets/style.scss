@@ -1,97 +1,201 @@
-$red: #902a2a;
+/*****************************VARIABLES********************************/
+$red: #820024;
+$lightRed: #902a2a;
+$textColor: #3e3e3d;
 $link: #00aab5;
 $lightGrey: #909090; 
-$darkGrey: #231f20; 
-$gold: #a77030;
-
+$darkGrey: #231f20;
+$btnRollover: #3E3E3D;
+$gold: #cca87f;
+$borderColor: #e1e1e1;
+$shadow: #f2f2f2;
+/*******************************FONTS**********************************/
 @font-face {
 	font-family: 'Univers';
-	src: url('../fonts/univers57condensed.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/univers57condensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-	url('../fonts/univers57condensed.woff') format('woff'), /* Modern Browsers */
-	url('../fonts/univers57condensed.ttf')  format('truetype'), /* Safari, Android, iOS */
-	url('../fonts/univers57condensed.svg#svgFontName') format('svg'); /* Legacy iOS */
+	src: url('/fonts/univers57condensed.eot'); /* IE9 Compat Modes */
+	src: url('/fonts/univers57condensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('/fonts/univers57condensed.woff') format('woff'), /* Modern Browsers */
+	url('/fonts/univers57condensed.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('/fonts/univers57condensed.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
 	font-family: 'UniversLight';
-	src: url('../fonts/Univers47CondensedLight.ttf')  format('truetype'); /* Safari, Android, iOS */
+	src: url("/fonts/Univers47CondensedLight.otf");
+}
+@font-face {
+	font-family:"UniversCondensedLight";
+	src: url("/fonts/UniversLTStd-ThinUltraCn.otf")
 }
 
+@font-face {
+	font-family:"Walt";
+	src: url("/fonts/waltograph42.otf")
+}
+
+@font-face {
+	font-family:"Bembo";
+	src: url("/fonts/bembo.otf")
+}
+@font-face {
+	font-family:"BemboSemibold";
+	src: url("/fonts/bembo-semibold.otf")
+}
 $font-stack: 'UniversLight', 'Univers', sans-serif;
-
-
-
-body { font-family: $font-stack !important; }
-h1 { }
+/******************************************************************/
+body { 
+	font-family: $font-stack !important; font-size: 1.6em;
+}
+h1 { font-family: 'Bembo'; }
 a { 
 	color: $link; 
 	&:hover {
 		text-decoration: none;
 	}
 }
-
+p {
+	margin-bottom: 35px; line-height: 180%; letter-spacing: 1px;
+	color: #3e3e3d !important;
+}
 .clear { 
 	clear: both; 
 	&.twenty { margin-top: 20px; }
 	&.forty { margin-top: 40px; }
 }
 .centered { text-align: center; }
-.btn { border-radius: 0; }
-.btn-primary { background: $red; border: none; max-width: 512px; }
-
 ul { list-style: none; padding-left: 0; }
 ul.most {
-	font-size: 1.2em; line-height: 100%;
+	line-height: 100%;
 	li {
 		margin-bottom: 23px;
 	}
 }
-
-#nav {
-	height: 80px;
+/******************************************************************/
+.container {
+	/*max-width: 940px;*/
+	padding-left: 10px; padding-right: 10px;
 }
-
+.btn { 
+	border-radius: 0;
+	&:hover {
+		background: $btnRollover;
+	}
+}
+.btn-primary { background: $red; border: none; max-width: 512px; margin-bottom: 10px !important; }
+.navbar-default {
+	background: $red; font-size: 1.3em; border-bottom: none; margin-top: 100px;
+	font-family: 'UniversLight', 'Univers'; letter-spacing: 0;
+	a { color: white !important; text-shadow: none !important; }
+}
+.navbar-header {
+	a.navbar-brand {
+		margin-top: 2px;
+		img { height: 50px !important; }
+	}
+}
+/******************************************************************/
+.topBanner {
+	padding-top: 20px; height: 100px;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #423E3F),
+		color-stop(1, #292627)
+		);
+	background-image: -o-linear-gradient(bottom, #423E3F 0%, #292627 100%);
+	background-image: -moz-linear-gradient(bottom, #423E3F 0%, #292627 100%);
+	background-image: -webkit-linear-gradient(bottom, #423E3F 0%, #292627 100%);
+	background-image: -ms-linear-gradient(bottom, #423E3F 0%, #292627 100%);
+	background-image: linear-gradient(to bottom, #423E3F 0%, #292627 100%);
+}
+#primaryNav {
+	height: 80px !important; padding-right: 20px;
+	ul.navbar-right {
+		padding-top: 16px;
+		li.navImg { margin-top: -8px; }
+	}
+}
+#secondaryNav {
+	background: $darkGrey; padding: 4px 20px 9px; font-size: .8em; 
+	height: 30px;
+	.navbar-brand {
+		padding: 0;
+	}
+	#displayArticles { 
+		cursor: pointer;
+		&:hover {
+			color: $gold !important;
+		}
+	}
+	#displayArticles:hover {
+		color: blue;
+	}
+	a#login {
+		float: right; cursor: pointer;
+		&:hover {
+			color: $gold !important;
+		}
+	}
+}
+/******************************************************************/
+#main {
+	padding-left: 0; padding-right: 0;
+}
 #slider {
-	h1, h2, h3 { margin: 0 auto; }
-	h1 { font-size: 4.3em; }
-	h2 { font-size: 1.4em; }
-	h3 { font-size: 1em; }
-	height: 400px;
-}
+	margin-top: 100px; height: 400px; color: white; padding-top: 80px; margin-bottom: 20px; 
+	background: url(http://devjb1.sanovaworks.com/JDD/site/images/desk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
+	h1, h2, h3 { margin: 0 auto; }
+	h1 { font-size: 6.5em; letter-spacing: -4px; line-height: 80%; }
+	h2 { font-size: 1.4em; letter-spacing: .5px; color: $gold; font-family: 'Bembo'; }
+	h3 { font-size: .8em; margin-top: 10px; letter-spacing: 3px; }
+	h5 { 
+		margin-top: 40px; font-size: 1.1em; margin-bottom: 10px;
+		span { color: $gold; }
+	}
+}
 #articlesList {
-	color: $lightGrey;
+	color: $lightGrey; margin-top: 130px; overflow: scroll; border-right: 1px $shadow solid; 
 	h3 {
-		font-size: 1.3em; letter-spacing: -1px;
-		a { color: $red; }
+		font-size: 1.5em; letter-spacing: -1px; line-height: 90%;
+		a { color: $lightRed !important; }
 	}
 	p {
 		font-size: .9em;
-		line-height: 100%;
+		line-height: 110%;
+	}
+	.article {
+		border-bottom: 1px solid $borderColor;
 	}
 }
-
 #featuredArticle {
-	h1 {
-		font-size: 4.3em; line-height: 90%;
-	}
+	h1 { font-family: 'BemboSemibold'; font-size: 4.3em; line-height: 90%; margin-bottom: 40px; letter-spacing: -4px; }
+	h2 { font-family: 'Bembo'; font-size: 2.5em; letter-spacing: -1px; }
+	h3 { color: $red; margin-bottom: 40px; }
 }
-
 #sidebar {
+	max-width: 300px; letter-spacing: 1px; color: $textColor ;
 	h3 { 
 		margin-bottom: 10px; 
 		span { color: $gold; }
 	}
-	.btn-primary { width: 300px; height: 60px; margin-bottom: 40px; }
-}
+	h2 { color: $gold; }
 
-#footer {
-	background: $darkGrey; color: white;
-	padding-top: 100px;	
-	#copyright {
-		margin: 70px auto 30px;
+	}	.btn-primary { 
+		width: 300px; height: 60px; font-size: 1.15em; margin-bottom: 40px; padding-top: 20px; letter-spacing: 1px;
 	}
-	h3 {
-		span { color: $gold; }
+	#footer {
+		background: $darkGrey; color: white !important;
+		padding-top: 100px;	
+		p { color: white !important; }
+		#copyright {
+			margin: 70px auto 30px;
+		}
+		h3 {
+			span { color: $gold; }
+		}
 	}
-}
