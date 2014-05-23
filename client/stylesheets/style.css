@@ -104,6 +104,8 @@ p {
     margin-top: 20px; }
   .clear.forty {
     margin-top: 40px; }
+  .clear.hundred {
+    margin-top: 100px; }
 
 .centered {
   text-align: center; }
@@ -276,7 +278,8 @@ ul.most {
     font-size: 1.5em;
     letter-spacing: -1px;
     line-height: 90%;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    word-wrap: break-word; }
     #articlesList h3 a {
       color: #902a2a !important; }
   #articlesList p {
@@ -370,3 +373,49 @@ ul.most {
     margin: 70px auto 30px; }
   #footer h3 span {
     color: #cca87f; }
+
+/**************************SECONDARY PAGES********************************/
+#breadcrumbsSection {
+  height: 49px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-top: 15px;
+  font-size: .9em;
+  letter-spacing: 2px;
+  margin-bottom: 20px; }
+  #breadcrumbsSection #breadcrumbs span {
+    margin: auto 5px; }
+  #breadcrumbsSection #back {
+    float: right; }
+
+#mainContent h1 {
+  color: #820024;
+  letter-spacing: -2px; }
+
+/**************************SUBSCRIPTION********************************/
+#subscriptionTable {
+  font-size: .9em;
+  margin-bottom: 20px; }
+  #subscriptionTable .infoRow {
+    padding: 0; }
+    #subscriptionTable .infoRow:nth-child(odd) {
+      background: whitesmoke; }
+    #subscriptionTable .infoRow .cell {
+      min-height: 77px;
+      padding: 20px;
+      text-align: center;
+      border-left: 1px solid #e1e1e1;
+      border-bottom: 1px solid #e1e1e1; }
+      #subscriptionTable .infoRow .cell:last-child {
+        border-right: 1px solid #e1e1e1; }
+      #subscriptionTable .infoRow .cell:first-child {
+        text-align: left; }
+    #subscriptionTable .infoRow:first-child {
+      background: #820024; }
+      #subscriptionTable .infoRow:first-child p {
+        color: white !important; }
+      #subscriptionTable .infoRow:first-child .cell {
+        border: none;
+        text-align: left; }
+    #subscriptionTable .infoRow p {
+      line-height: 110%;
+      margin-bottom: 0; }

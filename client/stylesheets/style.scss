@@ -107,6 +107,7 @@ p {
 	clear: both; 
 	&.twenty { margin-top: 20px; }
 	&.forty { margin-top: 40px; }
+	&.hundred { margin-top: 100px; }
 }
 .centered { text-align: center; }
 ul { list-style: none; padding-left: 0; }
@@ -227,7 +228,7 @@ ul.most {
 #articlesList { overflow-y: scroll;
 	color: $lightGrey; margin-top: 110px; overflow: scroll; border-right: 1px $shadow solid;
 	h3 {
-		font-size: 1.5em; letter-spacing: -1px; line-height: 90%; margin-bottom: 0;
+		font-size: 1.5em; letter-spacing: -1px; line-height: 90%; margin-bottom: 0; word-wrap: break-word;
 		a { color: $lightRed !important; }
 	}
 	p {
@@ -301,4 +302,39 @@ ul.most {
 		span { color: $gold; }
 	}
 }
-
+/**************************SECONDARY PAGES********************************/
+#breadcrumbsSection {
+	height: 49px; border-bottom: 1px solid $borderColor; padding-top: 15px; font-size: .9em; letter-spacing: 2px; margin-bottom: 20px;
+	#breadcrumbs {
+		span { margin: auto 5px; }
+	}
+	#back {
+		float: right;
+	}
+}
+#mainContent {
+	h1 { color: $red; letter-spacing: -2px; }
+}
+/**************************SUBSCRIPTION********************************/
+#subscriptionTable {
+	font-size: .9em; margin-bottom: 20px;
+	.infoRow {
+		padding: 0;
+		&:nth-child(odd) {
+			background: whitesmoke;
+		}
+		.cell {
+			min-height: 77px; padding: 20px; text-align: center;	
+			border-left: 1px solid $borderColor;
+			border-bottom: 1px solid $borderColor;
+			&:last-child { border-right: 1px solid $borderColor; }
+			&:first-child { text-align: left; }
+		}
+		&:first-child {
+			background: $red;
+			p { color: white !important; }
+			.cell { border: none; text-align: left; }
+		}
+		p { line-height: 110%; margin-bottom: 0;}
+	}
+}
