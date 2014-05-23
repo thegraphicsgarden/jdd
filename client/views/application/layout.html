@@ -1,35 +1,43 @@
-<body>
-	{{> header}}
-	<div id="articlesList" class="col-sm-2">
-		{{> articlesList}}
-	</div>
+<template name="layout">
+	<body>
+		{{> header}}
 
-	<div id="main" class="col-sm-10" style="">
-		<section id="slider" class="col-sm-12">
-			{{> slider}}
-		</section>
+		<div id="articlesList" class="col-sm-2">
+			{{> articlesList}}
+		</div>
 
-		<div class="container">
-			<article id="featuredArticle" class="col-sm-8">
-				{{> featuredArticle}}
-				<img src="/images/bottom-ad.png" />
-			</article>
+		<div id="main" class="col-sm-10">
+			{{> yield}}
+		</div>
 
-			<aside id="sidebar" class="col-sm-4">
-				{{> sidebar}}
-			</aside>
-		</div><!--container-->
-	</div>
+		<div class="clear"></div>
+		<footer id="footer">
+			{{> footer}}
+		</footer>
 
-	<div class="clear"></div>
-	<footer id="footer">
-		{{> footer}}
-	</footer>
+		<script>
+			var collapsed = false;
+			var main = $("#main");
+			var articlesList = $("#articlesList");
+			var displayBtn = $("#displayArticles");
+			var sign = displayBtn.children("span");
 
-	<script>
-		
-
-
-		
-	</script>
-</body>
+			displayBtn.click(function() {
+				if(collapsed) { //if articlesList closed then open
+					articlesList.css({display: "block"});
+					sign.text("-");
+					main.removeClass("col-sm-12");
+					main.addClass("col-sm-10");
+					collapsed = false;
+				}
+				else { //if articlesList open then close
+					articlesList.css({display: "none"});
+					sign.text("+");
+					main.addClass("col-sm-12");
+					main.removeClass("col-sm-10");
+					collapsed = true;
+				}
+			});
+		</script>
+	</body>
+</template>

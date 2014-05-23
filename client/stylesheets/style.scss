@@ -42,9 +42,36 @@ $shadow: #f2f2f2;
 }
 $font-stack: 'UniversLight', 'Univers', sans-serif;
 /******************************************************************/
-body { 
-	font-family: $font-stack !important; font-size: 1.6em;
+@media screen and (max-width: 992px) { /*tablets*/
+	#slider {
+		h1 {
+			font-size: 3.5em !important;
+		}
+	}
 }
+@media screen and (max-width: 768px) { /*phones*/
+	.topBanner {
+		img.topAd { width: 100%; }
+	}
+	#primaryNav {
+		height: auto !important;
+	}
+	#slider {
+		padding-top: 20px !important; text-align: center;
+		h1 { font-size: 4.5em !important; }
+		h2 { font-size: 1.3em !important; }
+		h3 { font-size: .8em !important; }
+	}
+	#featuredArticle { 
+		h1 { font-size: 2.5em !important; }
+	}
+	img#jddLogo { height: 100% !important; }
+}
+/******************************************************************/
+body { 
+	font-family: $font-stack !important; font-size: 1.3em;
+}
+section, article, aside, hgroup { display: block; }
 h1 { font-family: 'Bembo'; }
 a { 
 	color: $link; 
@@ -107,6 +134,7 @@ ul.most {
 	background-image: -webkit-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: -ms-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: linear-gradient(to bottom, #423E3F 0%, #292627 100%);
+	img.topAd { max-width: 557px; }
 }
 #primaryNav {
 	height: 80px !important; padding-right: 20px;
@@ -136,13 +164,17 @@ ul.most {
 			color: $gold !important;
 		}
 	}
+	a#smallFacebook, a#smallTwitter {
+		float: right;
+		img { height: 20px; margin-right: 5px; margin-top: -2px; }
+	}
 }
 /******************************************************************/
 #main {
-	padding-left: 0; padding-right: 0;
+	margin-top: 110px; padding-left: 0; padding-right: 0;
 }
 #slider {
-	margin-top: 100px; height: 400px; color: white; padding-top: 80px; margin-bottom: 20px; 
+	height: 400px; color: white; padding-top: 80px; margin-bottom: 20px; 
 	background: url(http://devjb1.sanovaworks.com/JDD/site/images/desk.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -159,7 +191,7 @@ ul.most {
 	}
 }
 #articlesList {
-	color: $lightGrey; margin-top: 130px; overflow: scroll; border-right: 1px $shadow solid; 
+	color: $lightGrey; margin-top: 110px; overflow: scroll; border-right: 1px $shadow solid;
 	h3 {
 		font-size: 1.5em; letter-spacing: -1px; line-height: 90%;
 		a { color: $lightRed !important; }

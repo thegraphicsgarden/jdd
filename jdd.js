@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
+  /*Template.hello.greeting = function () {
     return "Welcome to jdd.";
   };
 
@@ -9,7 +9,7 @@ if (Meteor.isClient) {
       if (typeof console !== 'undefined')
         console.log("You pressed the button");
     }
-  });
+  });*/
 }
 
 if (Meteor.isServer) {

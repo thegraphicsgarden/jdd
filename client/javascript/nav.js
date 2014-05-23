@@ -8,13 +8,22 @@
 	var smTopMargin = "80px";
 	var lgTopMargin = "100px";
 
+	setNav = function() { 
+		console.log("setNav");
+		setTopBanner(); 
+	};
+
+
 	$( document ).ready(function() { 
 		console.log("ready");
 		setNav(); 
 	});
 
-	setNav = function() { setTopBanner(); };
-	$( window ).resize(function() {	setTopBanner();	});
+	
+	$(window).resize(function() {  
+		console.log("window");
+		setTopBanner();
+	});
 
 	setTopBanner = function() {
 		var navbar = $(".navbar-default");
@@ -32,19 +41,9 @@
 		}
 	};
 
-
-
-	var initialMargin = $(".topBanner").height() + 20; //20 in padding
-		var scrollTop = 0;
-		$( window ).scroll(function() {
-			scrollTop = $(window).scrollTop();
-			$marginTop = initialMargin - scrollTop;
-			if($marginTop < 0) $marginTop = 0;
-			else if($marginTop > 100) $marginTop = 100;
-			console.log($marginTop);
-			navbar.css({
-				"margin-top": $marginTop
-			});
-		});
+	var test = function () {
+		alert("test");
+	};
+	
 })
 (jQuery);

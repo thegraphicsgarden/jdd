@@ -1,6 +1,6 @@
 <template name="articleItem">
   <div class="article">
-      <h3><a href="{{url}}">{{title}}</a></h3>
-      <p>{{teaser}} <a href="#">more</a></p>
+      <h3><a href="{{pathFor 'article'}}">{{title}}</a></h3>
+      <p class="hidden-xs">{{teaser}} <a href="{{pathFor 'article'}}">more</a></p>
   </div>
 </template>

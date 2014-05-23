@@ -1,11 +1,13 @@
 <template name="header">
-	<div class="topBanner">
+	<div class="topBanner ">
 		<div class="container">
-			<div class="col-sm-7">
-				<img src="/images/zyclara.jpg" />
-			</div>
-			<div class="col-sm-5">
-				<a href="#" class="btn btn-primary">SUBSCRIBE TO JDD NOW</a>
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-md-8">
+					<img class="topAd" src="/images/zyclara.jpg" />
+				</div>
+				<div class="col-md-4 visible-md visible-lg">
+					<a href="{{pathFor 'subscribe'}}" class="btn btn-primary">SUBSCRIBE TO JDD NOW</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -17,7 +19,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img alt="JDD Logo" src="/images/jdd-logo.png" /></a>
+			<a class="navbar-brand" href="{{pathFor 'homePage'}}"><img id="jddLogo" alt="JDD Logo" src="/images/jdd-logo.png" /></a>
 		</div>
 		<div id="primaryNav" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -26,17 +28,20 @@
 				<li><a href="../navbar/">Articles</a></li>
 				<li><a href="../navbar/">CME</a></li>
 				<li><a href="../navbar/">Multimedia</a></li>
-				<li><a href="../navbar/">Resources</a></li>
-				<li><a href="../navbar-static-top/">Advertising</a></li>
-				<li><a href="./">Subscribe</a></li>
-				<li class="navImg"><a href="http://twitter.com" target="_blank" rel="nofollow"><img alt="twitter" src="../images/twitter.png" /></a></li>
-				<li class="navImg"><a href="http://facebook.com" target="_blank" rel="nofollow"><img alt="facebook" src="../images/facebook.png" /></a></li>
-				<li class="navImg"><a><img src="../images/search.png" /></a></li>
+				<li class="visible-md visible-lg"><a href="../navbar/">Resources</a></li>
+				<li class="visible-md visible-lg"><a href="#">Advertising</a></li>
+				<li class=""><a href="{{pathFor 'subscribe'}}">Subscribe</a></li>
+				<li class="navImg visible-lg"><a href="http://twitter.com" target="_blank" rel="nofollow"><img alt="twitter" src="../images/twitter.png" /></a></li>
+				<li class="navImg visible-lg"><a href="http://facebook.com" target="_blank" rel="nofollow"><img alt="facebook" src="../images/facebook.png" /></a></li>
+				<li class="navImg"><a href="{{pathFor 'searchResults'}}"><img src="../images/search.png" /></a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 		<div  id="secondaryNav">
 			<a id="displayArticles">Articles in Current Issue <span>-</span></a>
+
 			<a id="login">Login</a>
+			<a id="smallFacebook" class="visible-xs visible-sm" href="http://facebook.com" target="_blank" rel="nofollow"><img alt="facebook" src="../images/facebook.png" /></a>
+			<a id="smallTwitter" class="visible-xs visible-sm" href="http://twitter.com" target="_blank" rel="nofollow"><img alt="twitter" src="../images/twitter.png" /></a>
 		</div>
 	</div>
 </template>

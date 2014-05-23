@@ -28,9 +28,40 @@
   src: url("/fonts/bembo-semibold.otf"); }
 
 /******************************************************************/
+@media screen and (max-width: 992px) {
+  /*tablets*/
+  #slider h1 {
+    font-size: 3.5em !important; } }
+@media screen and (max-width: 768px) {
+  /*phones*/
+  .topBanner img.topAd {
+    width: 100%; }
+
+  #primaryNav {
+    height: auto !important; }
+
+  #slider {
+    padding-top: 20px !important;
+    text-align: center; }
+    #slider h1 {
+      font-size: 4.5em !important; }
+    #slider h2 {
+      font-size: 1.3em !important; }
+    #slider h3 {
+      font-size: .8em !important; }
+
+  #featuredArticle h1 {
+    font-size: 2.5em !important; }
+
+  img#jddLogo {
+    height: 100% !important; } }
+/******************************************************************/
 body {
   font-family: "UniversLight", "Univers", sans-serif !important;
-  font-size: 1.6em; }
+  font-size: 1.3em; }
+
+section, article, aside, hgroup {
+  display: block; }
 
 h1 {
   font-family: 'Bembo'; }
@@ -108,6 +139,8 @@ ul.most {
   background-image: -webkit-linear-gradient(bottom, #423e3f 0%, #292627 100%);
   background-image: -ms-linear-gradient(bottom, #423e3f 0%, #292627 100%);
   background-image: linear-gradient(to bottom, #423e3f 0%, #292627 100%); }
+  .topBanner img.topAd {
+    max-width: 557px; }
 
 #primaryNav {
   height: 80px !important;
@@ -135,14 +168,20 @@ ul.most {
     cursor: pointer; }
     #secondaryNav a#login:hover {
       color: #cca87f !important; }
+  #secondaryNav a#smallFacebook, #secondaryNav a#smallTwitter {
+    float: right; }
+    #secondaryNav a#smallFacebook img, #secondaryNav a#smallTwitter img {
+      height: 20px;
+      margin-right: 5px;
+      margin-top: -2px; }
 
 /******************************************************************/
 #main {
+  margin-top: 110px;
   padding-left: 0;
   padding-right: 0; }
 
 #slider {
-  margin-top: 100px;
   height: 400px;
   color: white;
   padding-top: 80px;
@@ -176,7 +215,7 @@ ul.most {
 
 #articlesList {
   color: #909090;
-  margin-top: 130px;
+  margin-top: 110px;
   overflow: scroll;
   border-right: 1px #f2f2f2 solid; }
   #articlesList h3 {

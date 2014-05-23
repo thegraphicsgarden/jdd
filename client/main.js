@@ -1,4 +1,4 @@
-var featuredArticle = [
+/*var featuredArticle = [
 {
   title: 'What is New in Fungal Pharmacotherapeutics?',
   authors: 'Sacha Greif',
@@ -7,4 +7,4 @@ var featuredArticle = [
 ];
 Template.main.helpers({
   featuredArticle: featuredArticle
-});
+});*/
