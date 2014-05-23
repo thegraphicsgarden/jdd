@@ -7,30 +7,34 @@
 	var displayBtn = $("#displayArticles");
 	var sign = displayBtn.children("span");
 
-	displayBtn.click(function() {
-		(collapsed) ? expand() : collapse();
-	});
-
-	$(window).resize(function() {
+	checkSize = function () {
 		if( $(window).width() < 768 ) {
 			collapsed = true;
 			collapse();
 		}
-	});
+	};
 	expand = function () {
 		articlesList.css({display: "block"});
 		sign.text("-");
 		main.removeClass("col-xs-12 col-sm-12");
-		main.addClass("col-xs-10 col-sm-10");
+		main.addClass("col-xs-12 col-sm-10");
 		collapsed = false;
 	};
 	collapse = function() {
 		articlesList.css({display: "none"});
 		sign.text("+");
 		main.addClass("col-xs-12 col-sm-12");
-		main.removeClass("col-xs-10 col-sm-10");
+		main.removeClass("col-xs-12 col-sm-10");
 		collapsed = true;
 	};
+
+	displayBtn.click(function() {
+		(collapsed) ? expand() : collapse();
+	});
+
+	$(window).resize(checkSize);
+	$(document).ready(checkSize);
+
 
 	/*RIGHT SIDEBAR*/
 	var mostReadTab = $(".activeTab");

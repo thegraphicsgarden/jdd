@@ -21,7 +21,7 @@
 		smTopMargin = lgTopMargin = 0;	
 	}*/
 
-	setTopBanner = function() {
+	/*setTopBanner = function() {
 		var navbar = $(".navbar-default");
 		$height = navbar.height();
 		if ($height < 100) {
@@ -37,7 +37,7 @@
 	};
 	setNav = function() { setTopBanner(); };
 	$(document).ready(function() { setNav(); });
-	$( window ).resize(function() {	setTopBanner();	});
+	$( window ).resize(function() {	setTopBanner();	});*/
 
 
 

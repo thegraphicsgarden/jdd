@@ -43,14 +43,20 @@
     font-size: 3.5em !important; } }
 @media screen and (max-width: 768px) {
   /*phones*/
-  .topBanner img.topAd {
-    width: 100%; }
+  .topBanner {
+    height: 80px !important; }
+    .topBanner img.topAd {
+      width: 100%; }
 
   #primaryNav {
     height: auto !important; }
 
+  #main {
+    margin-top: 80px !important; }
+
   #slider {
-    padding-top: 20px !important;
+    height: 300px !important;
+    padding-top: 0 !important;
     text-align: center; }
     #slider h1 {
       font-size: 4.5em !important; }
@@ -63,7 +69,13 @@
     font-size: 2.5em !important; }
 
   img#jddLogo {
-    height: 100% !important; } }
+    height: 100% !important; }
+
+  #sidebar img {
+    width: 100%; } }
+@media screen and (max-width: 640px) {
+  .btn-primary {
+    width: 260px !important; } }
 /******************************************************************/
 body {
   font-family: "UniversLight", "Univers", sans-serif !important;

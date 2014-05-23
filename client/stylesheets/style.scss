@@ -63,13 +63,15 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 }
 @media screen and (max-width: 768px) { /*phones*/
 	.topBanner {
+		height: 80px !important;
 		img.topAd { width: 100%; }
 	}
 	#primaryNav {
 		height: auto !important;
 	}
+	#main { margin-top: 80px !important; }
 	#slider {
-		padding-top: 20px !important; text-align: center;
+		height: 300px !important; padding-top: 0 !important; text-align: center;
 		h1 { font-size: 4.5em !important; }
 		h2 { font-size: 1.3em !important; }
 		h3 { font-size: .8em !important; }
@@ -78,6 +80,12 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 		h1 { font-size: 2.5em !important; }
 	}
 	img#jddLogo { height: 100% !important; }
+	#sidebar {
+		img { width: 100%; }
+	}
+}
+@media screen and (max-width: 640px) { 
+	.btn-primary { width: 260px !important; }
 }
 /******************************************************************/
 body { 
@@ -135,12 +143,8 @@ ul.most {
 .topBanner {
 	padding-top: 20px; height: 100px;
 	background-image: -webkit-gradient(
-		linear,
-		left top,
-		left bottom,
-		color-stop(0, #423E3F),
-		color-stop(1, #292627)
-		);
+		linear, left top, left bottom, color-stop(0, #423E3F), color-stop(1, #292627)
+	);
 	background-image: -o-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: -moz-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: -webkit-linear-gradient(bottom, #423E3F 0%, #292627 100%);
