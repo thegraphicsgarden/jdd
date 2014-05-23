@@ -1,4 +1,6 @@
 /*****************************VARIABLES********************************/
+/*******************************MIXINS*********************************/
+/*@mixin makeBorder($pos) { $pos: 1px rgba(0,0,0,.1) solid; }*/
 /*******************************FONTS**********************************/
 @font-face {
   font-family: 'Univers';
@@ -28,6 +30,13 @@
   src: url("/fonts/bembo-semibold.otf"); }
 
 /******************************************************************/
+@media screen and (max-width: 1250px) {
+  #slider h1 {
+    font-size: 4.8em !important; }
+  #slider h2 {
+    font-size: 1.1em !important; }
+  #slider h3 {
+    font-size: .9em !important; } }
 @media screen and (max-width: 992px) {
   /*tablets*/
   #slider h1 {
@@ -110,8 +119,12 @@ ul.most {
 .btn-primary {
   background: #820024;
   border: none;
+  width: 300px;
+  height: 60px;
   max-width: 512px;
-  margin-bottom: 10px !important; }
+  margin-bottom: 10px !important;
+  font-size: 1.15em;
+  padding-top: 20px; }
 
 .navbar-default {
   background: #820024;
@@ -125,9 +138,9 @@ ul.most {
     text-shadow: none !important; }
 
 .navbar-header a.navbar-brand {
-  margin-top: 2px; }
+  margin-top: -5px; }
   .navbar-header a.navbar-brand img {
-    height: 50px !important; }
+    height: 64px !important; }
 
 /******************************************************************/
 .topBanner {
@@ -186,15 +199,43 @@ ul.most {
   color: white;
   padding-top: 80px;
   margin-bottom: 20px;
-  background: url(http://devjb1.sanovaworks.com/JDD/site/images/desk.jpg) no-repeat center center fixed;
+  background: url(/images/desk.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  #slider:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0), black);
+    /*linear-gradient(to bottom right,#002f4b,#dc4225)*/
+    opacity: 1; }
+  #slider #issueCover {
+    width: 192px;
+    height: 245px;
+    -webkit-filter: brightness(100%); }
+    #slider #issueCover:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 15px;
+      width: 192px;
+      height: 245px;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0), black);
+      /*linear-gradient(to bottom right,#002f4b,#dc4225)*/
+      opacity: .3; }
+  #slider hgroup {
+    margin-top: -20px; }
   #slider h1, #slider h2, #slider h3 {
     margin: 0 auto; }
   #slider h1 {
-    font-size: 6.5em;
+    font-size: 6.3em;
     letter-spacing: -4px;
     line-height: 80%; }
   #slider h2 {
@@ -214,6 +255,7 @@ ul.most {
       color: #cca87f; }
 
 #articlesList {
+  overflow-y: scroll;
   color: #909090;
   margin-top: 110px;
   overflow: scroll;
@@ -221,12 +263,19 @@ ul.most {
   #articlesList h3 {
     font-size: 1.5em;
     letter-spacing: -1px;
-    line-height: 90%; }
+    line-height: 90%;
+    margin-bottom: 0; }
     #articlesList h3 a {
       color: #902a2a !important; }
   #articlesList p {
     font-size: .9em;
     line-height: 110%; }
+    #articlesList p.author {
+      margin: 0 auto 10px;
+      font-style: italic;
+      font-size: .7em; }
+      #articlesList p.author span {
+        display: none; }
   #articlesList .article {
     border-bottom: 1px solid #e1e1e1; }
 
@@ -243,6 +292,22 @@ ul.most {
 #featuredArticle h3 {
   color: #820024;
   margin-bottom: 40px; }
+#featuredArticle ul#pagination {
+  text-align: center;
+  margin-bottom: 30px; }
+  #featuredArticle ul#pagination li {
+    font-size: 1.4em;
+    display: inline-block;
+    margin: auto 15px; }
+    #featuredArticle ul#pagination li:first-child {
+      margin-left: 0; }
+    #featuredArticle ul#pagination li:last-child {
+      margin-right: 0; }
+    #featuredArticle ul#pagination li a.activePage {
+      color: #820024;
+      cursor: default; }
+#featuredArticle img.featuredBottomAd {
+  width: 100%; }
 
 #sidebar {
   max-width: 300px;
@@ -251,17 +316,37 @@ ul.most {
   #sidebar h3 {
     margin-bottom: 10px; }
     #sidebar h3 span {
-      color: #cca87f; }
+      /*color: $gold;*/ }
   #sidebar h2 {
     color: #cca87f; }
-
-.btn-primary {
-  width: 300px;
-  height: 60px;
-  font-size: 1.15em;
-  margin-bottom: 40px;
-  padding-top: 20px;
-  letter-spacing: 1px; }
+  #sidebar .btn-primary {
+    width: 300px;
+    height: 60px;
+    font-size: 1.15em;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    letter-spacing: 1px; }
+  #sidebar .mostReadCited h3 {
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    border-bottom: none;
+    padding: 10px 5px 5px 5px;
+    color: #00aab5;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0; }
+    #sidebar .mostReadCited h3.activeTab {
+      background: whitesmoke;
+      color: #3e3e3d; }
+    #sidebar .mostReadCited h3.inactiveTab {
+      cursor: pointer; }
+      #sidebar .mostReadCited h3.inactiveTab:hover {
+        background: whitesmoke;
+        color: #820024; }
+  #sidebar .mostReadCited ul.most {
+    padding-top: 20px;
+    border-top: 1px rgba(0, 0, 0, 0.1) solid; }
+    #sidebar .mostReadCited ul.most li.mostCited {
+      display: none; }
 
 #footer {
   background: #231f20;

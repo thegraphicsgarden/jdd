@@ -2,11 +2,11 @@
 	<body>
 		{{> header}}
 
-		<div id="articlesList" class="col-sm-2">
+		<div id="articlesList" class="col-xs-2 col-sm-2">
 			{{> articlesList}}
 		</div>
 
-		<div id="main" class="col-sm-10">
+		<div id="main" class="col-xs-10 col-sm-10">
 			{{> yield}}
 		</div>
 
@@ -14,30 +14,5 @@
 		<footer id="footer">
 			{{> footer}}
 		</footer>
-
-		<script>
-			var collapsed = false;
-			var main = $("#main");
-			var articlesList = $("#articlesList");
-			var displayBtn = $("#displayArticles");
-			var sign = displayBtn.children("span");
-
-			displayBtn.click(function() {
-				if(collapsed) { //if articlesList closed then open
-					articlesList.css({display: "block"});
-					sign.text("-");
-					main.removeClass("col-sm-12");
-					main.addClass("col-sm-10");
-					collapsed = false;
-				}
-				else { //if articlesList open then close
-					articlesList.css({display: "none"});
-					sign.text("+");
-					main.addClass("col-sm-12");
-					main.removeClass("col-sm-10");
-					collapsed = true;
-				}
-			});
-		</script>
 	</body>
 </template>

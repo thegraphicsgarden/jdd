@@ -9,6 +9,10 @@ $btnRollover: #3E3E3D;
 $gold: #cca87f;
 $borderColor: #e1e1e1;
 $shadow: #f2f2f2;
+
+$border: 1px rgba(0,0,0,.1) solid;
+/*******************************MIXINS*********************************/
+/*@mixin makeBorder($pos) { $pos: 1px rgba(0,0,0,.1) solid; }*/
 /*******************************FONTS**********************************/
 @font-face {
 	font-family: 'Univers';
@@ -42,6 +46,14 @@ $shadow: #f2f2f2;
 }
 $font-stack: 'UniversLight', 'Univers', sans-serif;
 /******************************************************************/
+@media screen and (max-width: 1250px) {
+	#slider {
+		h1 { font-size: 4.8em !important; }
+		h2 { font-size: 1.1em !important; }
+		h3 { font-size: .9em !important; }
+	}
+}
+
 @media screen and (max-width: 992px) { /*tablets*/
 	#slider {
 		h1 {
@@ -81,7 +93,7 @@ a {
 }
 p {
 	margin-bottom: 35px; line-height: 180%; letter-spacing: 1px;
-	color: #3e3e3d !important;
+	color: $textColor !important;
 }
 .clear { 
 	clear: both; 
@@ -107,7 +119,7 @@ ul.most {
 		background: $btnRollover;
 	}
 }
-.btn-primary { background: $red; border: none; max-width: 512px; margin-bottom: 10px !important; }
+.btn-primary { background: $red; border: none; width: 300px; height: 60px; max-width: 512px; margin-bottom: 10px !important; font-size: 1.15em; padding-top: 20px; }
 .navbar-default {
 	background: $red; font-size: 1.3em; border-bottom: none; margin-top: 100px;
 	font-family: 'UniversLight', 'Univers'; letter-spacing: 0;
@@ -115,8 +127,8 @@ ul.most {
 }
 .navbar-header {
 	a.navbar-brand {
-		margin-top: 2px;
-		img { height: 50px !important; }
+		margin-top: -5px;
+		img { height: 64px !important; }
 	}
 }
 /******************************************************************/
@@ -174,15 +186,33 @@ ul.most {
 	margin-top: 110px; padding-left: 0; padding-right: 0;
 }
 #slider {
-	height: 400px; color: white; padding-top: 80px; margin-bottom: 20px; 
-	background: url(http://devjb1.sanovaworks.com/JDD/site/images/desk.jpg) no-repeat center center fixed; 
+	height: 400px; color: white; padding-top: 80px; margin-bottom: 20px;
+	background: url(/images/desk.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 
+	&:before {
+	    content: '';
+		position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+		background-image: radial-gradient(circle, rgba(255,255,255,0),rgba(0,0,0,1));/*linear-gradient(to bottom right,#002f4b,#dc4225)*/
+		opacity: 1; 
+	}
+
+	#issueCover {
+		width: 192px; height: 245px;  -webkit-filter:brightness(100%);
+		&:before {
+		    content: '';
+			position: absolute; top: 0; right: 0; bottom: 0; left: 15px;width: 192px; height: 245px;
+			background-image: radial-gradient(circle, rgba(255,255,255,0),rgba(0,0,0,1));/*linear-gradient(to bottom right,#002f4b,#dc4225)*/
+			opacity: .3; 
+		 }
+	}
+
+	hgroup { margin-top: -20px; }
 	h1, h2, h3 { margin: 0 auto; }
-	h1 { font-size: 6.5em; letter-spacing: -4px; line-height: 80%; }
+	h1 { font-size: 6.3em; letter-spacing: -4px; line-height: 80%; }
 	h2 { font-size: 1.4em; letter-spacing: .5px; color: $gold; font-family: 'Bembo'; }
 	h3 { font-size: .8em; margin-top: 10px; letter-spacing: 3px; }
 	h5 { 
@@ -190,15 +220,19 @@ ul.most {
 		span { color: $gold; }
 	}
 }
-#articlesList {
+#articlesList { overflow-y: scroll;
 	color: $lightGrey; margin-top: 110px; overflow: scroll; border-right: 1px $shadow solid;
 	h3 {
-		font-size: 1.5em; letter-spacing: -1px; line-height: 90%;
+		font-size: 1.5em; letter-spacing: -1px; line-height: 90%; margin-bottom: 0;
 		a { color: $lightRed !important; }
 	}
 	p {
 		font-size: .9em;
 		line-height: 110%;
+		&.author {
+			margin: 0 auto 10px; font-style: italic; font-size: .7em;
+			span { display: none; }
+		}
 	}
 	.article {
 		border-bottom: 1px solid $borderColor;
@@ -208,26 +242,59 @@ ul.most {
 	h1 { font-family: 'BemboSemibold'; font-size: 4.3em; line-height: 90%; margin-bottom: 40px; letter-spacing: -4px; }
 	h2 { font-family: 'Bembo'; font-size: 2.5em; letter-spacing: -1px; }
 	h3 { color: $red; margin-bottom: 40px; }
+	ul#pagination { 
+		text-align: center; margin-bottom: 30px; 
+		li { 
+			font-size: 1.4em; display: inline-block; margin: auto 15px ;
+			&:first-child { margin-left: 0; }
+			&:last-child { margin-right: 0; }
+			a {
+				&.activePage { color: $red; cursor: default; }
+			}
+		}
+	}
+	img.featuredBottomAd {
+		width: 100%;
+	}
 }
 #sidebar {
 	max-width: 300px; letter-spacing: 1px; color: $textColor ;
 	h3 { 
 		margin-bottom: 10px; 
-		span { color: $gold; }
+		span { /*color: $gold;*/ }
 	}
 	h2 { color: $gold; }
 
-	}	.btn-primary { 
+	.btn-primary { 
 		width: 300px; height: 60px; font-size: 1.15em; margin-bottom: 40px; padding-top: 20px; letter-spacing: 1px;
 	}
-	#footer {
-		background: $darkGrey; color: white !important;
-		padding-top: 100px;	
-		p { color: white !important; }
-		#copyright {
-			margin: 70px auto 30px;
+	.mostReadCited{
+		h3 { 
+			border: $border; border-bottom: none; padding: 10px 5px 5px 5px; color: $link;
+			display: inline-block; margin-right: 10px; margin-bottom: 0;
+			&.activeTab { 
+				background: whitesmoke; color: $textColor;
+			}
+			&.inactiveTab {
+				cursor: pointer;
+				&:hover { background: whitesmoke; color: $red; }
+			}
 		}
-		h3 {
-			span { color: $gold; }
+		ul.most {
+			padding-top: 20px; border-top: $border;
+			li.mostCited { display: none; }
 		}
 	}
+}
+#footer {
+	background: $darkGrey; color: white !important;
+	padding-top: 100px;	
+	p { color: white !important; }
+	#copyright {
+		margin: 70px auto 30px;
+	}
+	h3 {
+		span { color: $gold; }
+	}
+}
+

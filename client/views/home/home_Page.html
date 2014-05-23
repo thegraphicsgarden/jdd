@@ -6,7 +6,14 @@
 	<div class="container">
 		<article id="featuredArticle" class="col-sm-8">
 			{{> featuredArticle}}
-			<img src="/images/bottom-ad.png" />
+			<ul id="pagination">
+				<li><a class="activePage" href="#">1</a></li>
+				<li><a href="{{pathFor 'article'}}">2</a></li>
+				<li><a href="{{pathFor 'article'}}">3</a></li>
+				<li><a href="{{pathFor 'article'}}">4</a></li>
+				<li><a href="{{pathFor 'article'}}">5</a></li>
+			</ul>
+			<img class="featuredBottomAd" src="/images/bottom-ad.png" />
 		</article>
 
 		<aside id="sidebar" class="col-sm-4">
