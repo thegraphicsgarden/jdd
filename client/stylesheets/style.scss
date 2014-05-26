@@ -308,9 +308,7 @@ ul.most {
 	#breadcrumbs {
 		span { margin: auto 5px; }
 	}
-	#back {
-		float: right;
-	}
+	.crumb { text-transform: capitalize; }
 }
 #mainContent {
 	h1 { color: $red; letter-spacing: -2px; }

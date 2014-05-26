@@ -384,8 +384,8 @@ ul.most {
   margin-bottom: 20px; }
   #breadcrumbsSection #breadcrumbs span {
     margin: auto 5px; }
-  #breadcrumbsSection #back {
-    float: right; }
+  #breadcrumbsSection .crumb {
+    text-transform: capitalize; }
 
 #mainContent h1 {
   color: #820024;

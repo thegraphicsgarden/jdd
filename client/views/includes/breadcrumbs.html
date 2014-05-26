@@ -3,14 +3,22 @@
 		<div class="container">
 			<section id="breadcrumbsResizer" class="col-xs-12 col-sm-10">
 				<span id="breadcrumbs">
-					<a href="{{pathFor 'homePage'}}">Home</a> <span>></span> 
-					<a href="{{pathFor 'subscribe'}}">Subscription</a> <span>></span>
-					Subscription Information
+					<a href="{{pathFor 'homePage'}}">Home</a>
+					{{#each crumbs}}
+						<a class="crumb" href="/{{.}}">{{.}}</a> >
+					{{/each}}
+					<span class="crumb">{{currentPage}}</span>
 				</span> 
-				<span id="back">
-					<a href="{{pathFor 'subscribe'}}">&lt; Back</a>
-				</span>
 			</section>
 		</div>
 	</div>
+
+	<script>
+		$(".crumb").each(function() {
+			$text = $(this).text();
+			$text = $text.replace("-", " ");
+			$(this).text($text);
+			console.log($text);
+		});
+	</script>
 </template>
