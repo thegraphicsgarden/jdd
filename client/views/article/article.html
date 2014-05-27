@@ -1,7 +1,29 @@
 <template name="article">
-	<div class="container">
-		<article class="col-sm-12">
-			<h1>Dyschromia in Skin of Color</h1>
+	{{> breadcrumbs}}
+	<div id="articlePage" class="container">
+		<article id="mainContent" class="col-sm-8">
+			{{> featuredArticle}}
+			<ul id="pagination">
+				<li><a class="activePage" href="#">1</a></li>
+				<li><a href="{{pathFor 'article'}}">2</a></li>
+				<li><a href="{{pathFor 'article'}}">3</a></li>
+			</ul>
+			<section id="articleTeasers" class="col-xs-12">
+				<h3>Related Articles</h3> 
+				{{#each articleTeasers}}
+					<div class="articleTeaser col-xs-12 col-sm-4">
+						<h4><a href="{{pathFor 'article'}}">{{title}}</a></h4>
+						<p>{{teaser}} <a href="{{pathFor 'article'}}">more</a></p>
+					</div>
+					<!--{{#if third}}
+						<div class="hidden-xs col-sm-3"></div>
+						<div class="clear"></div>
+					{{/if}}-->
+				{{/each}}
+			</section>
 		</article>
+		<aside id="sidebar" class="col-xs-12 col-sm-4">
+			{{> sidebar}}
+		</aside>
 	</div><!--container-->
 </template>

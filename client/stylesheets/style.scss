@@ -45,7 +45,7 @@ $border: 1px rgba(0,0,0,.1) solid;
 	src: url("/fonts/bembo-semibold.otf")
 }
 $font-stack: 'UniversLight', 'Univers', sans-serif;
-/******************************************************************/
+/***************************MEDIA QUERIES*********************************/
 @media screen and (max-width: 1250px) {
 	#slider {
 		h1 { font-size: 4.8em !important; }
@@ -87,9 +87,9 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 @media screen and (max-width: 640px) { 
 	.btn-primary { width: 260px !important; }
 }
-/******************************************************************/
+/*****************************GENERAL CSS********************************/
 body { 
-	font-family: $font-stack !important; font-size: 1.3em;
+	font-family: $font-stack !important; font-size: 1.22em;
 }
 section, article, aside, hgroup { display: block; }
 h1 { font-family: 'Bembo'; }
@@ -117,7 +117,7 @@ ul.most {
 		margin-bottom: 23px;
 	}
 }
-/******************************************************************/
+/********************BOOTSTRAP OVERRIDES*****************************/
 .container {
 	/*max-width: 940px;*/
 	padding-left: 10px; padding-right: 10px;
@@ -145,7 +145,7 @@ ul.most {
 	padding-top: 20px; height: 100px;
 	background-image: -webkit-gradient(
 		linear, left top, left bottom, color-stop(0, #423E3F), color-stop(1, #292627)
-	);
+		);
 	background-image: -o-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: -moz-linear-gradient(bottom, #423E3F 0%, #292627 100%);
 	background-image: -webkit-linear-gradient(bottom, #423E3F 0%, #292627 100%);
@@ -186,9 +186,15 @@ ul.most {
 		img { height: 20px; margin-right: 5px; margin-top: -2px; }
 	}
 }
-/******************************************************************/
+/*******************************GENERAL CSS*********************************/
 #main {
 	margin-top: 110px; padding-left: 0; padding-right: 0;
+	figure.left {
+		margin: 0 10px 10px 0; padding-left: 0;
+		img {
+			width: 100%;
+		}
+	}
 }
 #slider {
 	height: 400px; color: white; padding-top: 80px; margin-bottom: 20px;
@@ -199,7 +205,7 @@ ul.most {
 	background-size: cover;
 
 	&:before {
-	    content: '';
+		content: '';
 		position: absolute; top: 0; right: 0; bottom: 0; left: 0;
 		background-image: radial-gradient(circle, rgba(255,255,255,0),rgba(0,0,0,1));/*linear-gradient(to bottom right,#002f4b,#dc4225)*/
 		opacity: 1; 
@@ -208,11 +214,11 @@ ul.most {
 	#issueCover {
 		width: 192px; height: 245px;  -webkit-filter:brightness(100%);
 		&:before {
-		    content: '';
+			content: '';
 			position: absolute; top: 0; right: 0; bottom: 0; left: 15px;width: 192px; height: 245px;
 			background-image: radial-gradient(circle, rgba(255,255,255,0),rgba(0,0,0,1));/*linear-gradient(to bottom right,#002f4b,#dc4225)*/
 			opacity: .3; 
-		 }
+		}
 	}
 
 	hgroup { margin-top: -20px; }
@@ -247,17 +253,6 @@ ul.most {
 	h1 { font-family: 'BemboSemibold'; font-size: 4.3em; line-height: 90%; margin-bottom: 40px; letter-spacing: -4px; }
 	h2 { font-family: 'Bembo'; font-size: 2.5em; letter-spacing: -1px; }
 	h3 { color: $red; margin-bottom: 40px; }
-	ul#pagination { 
-		text-align: center; margin-bottom: 30px; 
-		li { 
-			font-size: 1.4em; display: inline-block; margin: auto 15px ;
-			&:first-child { margin-left: 0; }
-			&:last-child { margin-right: 0; }
-			a {
-				&.activePage { color: $red; cursor: default; }
-			}
-		}
-	}
 	img.featuredBottomAd {
 		width: 100%;
 	}
@@ -266,30 +261,30 @@ ul.most {
 	max-width: 300px; letter-spacing: 1px; color: $textColor ;
 	h3 { 
 		margin-bottom: 10px; 
-		span { /*color: $gold;*/ }
-	}
-	h2 { color: $gold; }
+	span { /*color: $gold;*/ }
+}
+h2 { color: $gold; }
 
-	.btn-primary { 
-		width: 300px; height: 60px; font-size: 1.15em; margin-bottom: 40px; padding-top: 20px; letter-spacing: 1px;
-	}
-	.mostReadCited{
-		h3 { 
-			border: $border; border-bottom: none; padding: 10px 5px 5px 5px; color: $link;
-			display: inline-block; margin-right: 10px; margin-bottom: 0;
-			&.activeTab { 
-				background: whitesmoke; color: $textColor;
-			}
-			&.inactiveTab {
-				cursor: pointer;
-				&:hover { background: whitesmoke; color: $red; }
-			}
+.btn-primary { 
+	width: 300px; height: 60px; font-size: 1.15em; margin-bottom: 40px; padding-top: 20px; letter-spacing: 1px;
+}
+.mostReadCited{
+	h3 { 
+		border: $border; border-bottom: none; padding: 10px 5px 5px 5px; color: $link;
+		display: inline-block; margin-right: 10px; margin-bottom: 0;
+		&.activeTab { 
+			background: whitesmoke; color: $textColor;
 		}
-		ul.most {
-			padding-top: 20px; border-top: $border;
-			li.mostCited { display: none; }
+		&.inactiveTab {
+			cursor: pointer;
+			&:hover { background: whitesmoke; color: $red; }
 		}
 	}
+	ul.most {
+		padding-top: 20px; border-top: $border;
+		li.mostCited { display: none; }
+	}
+}
 }
 #footer {
 	background: $darkGrey; color: white !important;
@@ -308,10 +303,70 @@ ul.most {
 	#breadcrumbs {
 		span { margin: auto 5px; }
 	}
+	#topic { float: right; }
 	.crumb { text-transform: capitalize; }
 }
 #mainContent {
 	h1 { color: $red; letter-spacing: -2px; }
+	hgroup { 
+		h1 { margin-bottom: 0; }
+		h5 { margin-top: 0; letter-spacing: 3px; }
+	}
+}
+ul#pagination { 
+	text-align: center; margin-bottom: 30px; 
+	li { 
+		font-size: 1.4em; display: inline-block; margin: auto 15px ;
+		&:first-child { margin-left: 0; }
+		&:last-child { margin-right: 0; }
+		a {
+			&.activePage { color: $red; cursor: default; }
+		}
+	}
+}
+#articleTeasers { 
+	padding: 0;
+	.articleTeaser {
+		h4 a { 
+			color: $red; 
+		}		
+		h4 a:hover {
+			color: $link;
+		}
+		p { line-height: 130%; font-size: .9em; }
+	}
+}
+/****************************ARTICLE PAGE******************************/
+#articlePage {
+	background: url(/images/topic1.bkg.jpg);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:200px 300px;
+}
+/*******************************SEARCH*********************************/
+$searchHeight: 40px;
+$inputFieldBkg: #efefef;
+
+.searchArchives {
+	* {
+		padding-left: 0 !important;
+	}
+	select { height: $searchHeight !important; width: 90%; margin-bottom: 40px;  }
+	input[type=text] { height: $searchHeight; width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; }
+	.options {
+		clear: both; margin-bottom: 20px; 
+		span { margin-left: 4px; font-size: .8em; }
+	}
+	.btn { width: 300px; }
+}
+input#searchField {
+	height: $searchHeight; margin-top: -2px; background: $inputFieldBkg; width: 260px; padding-left: 10px; padding-top: 5px;
+}
+.searchBtn {
+	height: $searchHeight; width: 160px; padding-top: 10px; margin-left: -4px; margin-top: 6px;
+}
+#activeSearch {
+	color: $textColor;
 }
 /**************************SUBSCRIPTION********************************/
 #subscriptionTable {

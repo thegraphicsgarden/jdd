@@ -29,7 +29,7 @@
   font-family: "BemboSemibold";
   src: url("/fonts/bembo-semibold.otf"); }
 
-/******************************************************************/
+/***************************MEDIA QUERIES*********************************/
 @media screen and (max-width: 1250px) {
   #slider h1 {
     font-size: 4.8em !important; }
@@ -76,10 +76,10 @@
 @media screen and (max-width: 640px) {
   .btn-primary {
     width: 260px !important; } }
-/******************************************************************/
+/*****************************GENERAL CSS********************************/
 body {
   font-family: "UniversLight", "Univers", sans-serif !important;
-  font-size: 1.3em; }
+  font-size: 1.22em; }
 
 section, article, aside, hgroup {
   display: block; }
@@ -119,7 +119,7 @@ ul.most {
   ul.most li {
     margin-bottom: 23px; }
 
-/******************************************************************/
+/********************BOOTSTRAP OVERRIDES*****************************/
 .container {
   /*max-width: 940px;*/
   padding-left: 10px;
@@ -202,11 +202,16 @@ ul.most {
       margin-right: 5px;
       margin-top: -2px; }
 
-/******************************************************************/
+/*******************************GENERAL CSS*********************************/
 #main {
   margin-top: 110px;
   padding-left: 0;
   padding-right: 0; }
+  #main figure.left {
+    margin: 0 10px 10px 0;
+    padding-left: 0; }
+    #main figure.left img {
+      width: 100%; }
 
 #slider {
   height: 400px;
@@ -307,20 +312,6 @@ ul.most {
 #featuredArticle h3 {
   color: #820024;
   margin-bottom: 40px; }
-#featuredArticle ul#pagination {
-  text-align: center;
-  margin-bottom: 30px; }
-  #featuredArticle ul#pagination li {
-    font-size: 1.4em;
-    display: inline-block;
-    margin: auto 15px; }
-    #featuredArticle ul#pagination li:first-child {
-      margin-left: 0; }
-    #featuredArticle ul#pagination li:last-child {
-      margin-right: 0; }
-    #featuredArticle ul#pagination li a.activePage {
-      color: #820024;
-      cursor: default; }
 #featuredArticle img.featuredBottomAd {
   width: 100%; }
 
@@ -384,12 +375,91 @@ ul.most {
   margin-bottom: 20px; }
   #breadcrumbsSection #breadcrumbs span {
     margin: auto 5px; }
+  #breadcrumbsSection #topic {
+    float: right; }
   #breadcrumbsSection .crumb {
     text-transform: capitalize; }
 
 #mainContent h1 {
   color: #820024;
   letter-spacing: -2px; }
+#mainContent hgroup h1 {
+  margin-bottom: 0; }
+#mainContent hgroup h5 {
+  margin-top: 0;
+  letter-spacing: 3px; }
+
+ul#pagination {
+  text-align: center;
+  margin-bottom: 30px; }
+  ul#pagination li {
+    font-size: 1.4em;
+    display: inline-block;
+    margin: auto 15px; }
+    ul#pagination li:first-child {
+      margin-left: 0; }
+    ul#pagination li:last-child {
+      margin-right: 0; }
+    ul#pagination li a.activePage {
+      color: #820024;
+      cursor: default; }
+
+#articleTeasers {
+  padding: 0; }
+  #articleTeasers .articleTeaser h4 a {
+    color: #820024; }
+  #articleTeasers .articleTeaser h4 a:hover {
+    color: #00aab5; }
+  #articleTeasers .articleTeaser p {
+    line-height: 130%;
+    font-size: .9em; }
+
+/****************************ARTICLE PAGE******************************/
+#articlePage {
+  background: url(/images/topic1.bkg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 200px 300px; }
+
+/*******************************SEARCH*********************************/
+.searchArchives * {
+  padding-left: 0 !important; }
+.searchArchives select {
+  height: 40px !important;
+  width: 90%;
+  margin-bottom: 40px; }
+.searchArchives input[type=text] {
+  height: 40px;
+  width: 240px;
+  padding-left: 10px !important;
+  background: #efefef;
+  letter-spacing: 1px; }
+.searchArchives .options {
+  clear: both;
+  margin-bottom: 20px; }
+  .searchArchives .options span {
+    margin-left: 4px;
+    font-size: .8em; }
+.searchArchives .btn {
+  width: 300px; }
+
+input#searchField {
+  height: 40px;
+  margin-top: -2px;
+  background: #efefef;
+  width: 260px;
+  padding-left: 10px;
+  padding-top: 5px; }
+
+.searchBtn {
+  height: 40px;
+  width: 160px;
+  padding-top: 10px;
+  margin-left: -4px;
+  margin-top: 6px; }
+
+#activeSearch {
+  color: #3e3e3d; }
 
 /**************************SUBSCRIPTION********************************/
 #subscriptionTable {
