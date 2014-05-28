@@ -1,54 +1,27 @@
 (function(e){
-
 	/*LEFT SIDEBAR*/
 	var collapsed = false;
-	var homeMain = $("#main");
-	var secondaryMain = $("#mainContent");
-	var articlesList = $("#articlesList");
 	var displayBtn = $("#displayArticles");
-	var sign = displayBtn.children("span");
+	var articlesList = $("#articlesList");
+	var main = $("#main");
 
-	checkSize = function () {
-		if( $(window).width() < 768 ) {
-			collapsed = true;
-			collapse();
-		}
-		if( !$("#articlesList:visible") ) {
-			expand();
-		}
-	};
-	expand = function () {
-		articlesList.css({display: "block"});
-		sign.text("-");
-		homeMain.removeClass("col-xs-12 col-sm-12");
-		homeMain.addClass("col-xs-12 col-sm-10");
-
-		/*secondary pages*/
-		$("#mainContent").add("#breadcrumbsResizer").addClass("col-sm-10");
-		collapsed = false;
-	};
 	collapse = function() {
-		articlesList.css({display: "none"});
-		sign.text("+");
-		homeMain.addClass("col-xs-12 col-sm-12");
-		homeMain.removeClass("col-xs-12 col-sm-10");
-
-		/*secondary pages*/
-		$("#mainContent").add("#breadcrumbsResizer").removeClass("col-sm-10");
-
-		collapsed = true;
+		articlesList.hide("slow", function() {
+			main.removeClass("col-sm-10");
+		});
+	};
+	expand = function() {
+		articlesList.show("slow");
+		main.addClass("col-sm-10");
 	};
 
 	displayBtn.click(function() {
+		//console.log("click: " + collapsed);
 		(collapsed) ? expand() : collapse();
+		collapsed = !collapsed;
+		console.log("collapsed: " + collapsed);
 	});
 
-	$(window).resize( function () {
-		checkSize();
-	});
-	$(document).ready( function () {
-		checkSize();
-	});
 
 
 	/*RIGHT SIDEBAR*/
@@ -70,10 +43,4 @@
 		mostReadLI.css({display: "block"});
 		mostCitedLI.css({display: "none"});
 	});
-
-
-	/*$(".author").click(function () {
-		$child = $(this).children("span");
-		($child.is(':visible')) ? $child.hide() : $child.show();
-	});*/
 })(jQuery);

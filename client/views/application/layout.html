@@ -1,18 +1,18 @@
 <template name="layout">
-	<body>
-		{{> header}}
+	
+	{{> header}}
 
-		<div id="articlesList" class="col-xs-12 col-sm-2">
-			{{> articlesList}}
-		</div>
+	<div id="articlesList" class="col-xs-12 col-sm-2">
+		{{> articlesList}}
+	</div>
 
-		<div id="main" class="col-xs-12 col-sm-10">
-			{{> yield}}
-		</div>
+	<div id="main" class="col-xs-12 col-sm-10">
+		{{> yield}}
+	</div>
 
-		<div class="clear"></div>
-		<footer id="footer">
-			{{> footer}}
-		</footer>
-	</body>
+	<div class="clear"></div>
+	<footer id="footer">
+		{{> footer}}
+	</footer>
+
 </template>

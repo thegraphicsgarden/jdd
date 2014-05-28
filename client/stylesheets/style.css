@@ -71,8 +71,8 @@
   img#jddLogo {
     height: 100% !important; }
 
-  #sidebar img {
-    width: 100%; } }
+  #sidebar {
+    max-width: 100% !important; } }
 @media screen and (max-width: 640px) {
   .btn-primary {
     width: 260px !important; } }
@@ -81,8 +81,10 @@
     width: 100%; } }
 /*****************************GENERAL CSS********************************/
 body {
+  padding: 0;
+  margin: 0;
   font-family: "UniversLight", "Univers", sans-serif !important;
-  font-size: 1.22em; }
+  font-size: 1.5em; }
 
 section, article, aside, hgroup {
   display: block; }
@@ -147,7 +149,7 @@ ul.most {
   background: #820024;
   font-size: 1.3em;
   border-bottom: none;
-  margin-top: 0;
+  margin-top: 100px;
   font-family: 'UniversLight', 'Univers';
   letter-spacing: 0; }
   .navbar a {
@@ -324,38 +326,44 @@ ul.most {
   color: #3e3e3d; }
   #sidebar h3 {
     margin-bottom: 10px; }
-    #sidebar h3 span {
-      /*color: $gold;*/ }
+  #sidebar .btn {
+    width: 100%; }
+  #sidebar img {
+    width: 100%; }
+  #sidebar img.tallAd {
+    max-width: 160px !important; }
   #sidebar h2 {
     color: #cca87f; }
-  #sidebar .btn-primary {
-    width: 300px;
-    height: 60px;
-    font-size: 1.15em;
-    margin-bottom: 40px;
-    padding-top: 20px;
-    letter-spacing: 1px; }
-  #sidebar .mostReadCited h3 {
-    border: 1px rgba(0, 0, 0, 0.1) solid;
-    border-bottom: none;
-    padding: 10px 5px 5px 5px;
-    color: #00aab5;
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 0; }
-    #sidebar .mostReadCited h3.activeTab {
+
+.btn-primary {
+  width: 300px;
+  height: 60px;
+  font-size: 1.15em;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  letter-spacing: 1px; }
+
+.mostReadCited h3 {
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  border-bottom: none;
+  padding: 10px 5px 5px 5px;
+  color: #00aab5;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 0; }
+  .mostReadCited h3.activeTab {
+    background: whitesmoke;
+    color: #3e3e3d; }
+  .mostReadCited h3.inactiveTab {
+    cursor: pointer; }
+    .mostReadCited h3.inactiveTab:hover {
       background: whitesmoke;
-      color: #3e3e3d; }
-    #sidebar .mostReadCited h3.inactiveTab {
-      cursor: pointer; }
-      #sidebar .mostReadCited h3.inactiveTab:hover {
-        background: whitesmoke;
-        color: #820024; }
-  #sidebar .mostReadCited ul.most {
-    padding-top: 20px;
-    border-top: 1px rgba(0, 0, 0, 0.1) solid; }
-    #sidebar .mostReadCited ul.most li.mostCited {
-      display: none; }
+      color: #820024; }
+.mostReadCited ul.most {
+  padding-top: 20px;
+  border-top: 1px rgba(0, 0, 0, 0.1) solid; }
+  .mostReadCited ul.most li.mostCited {
+    display: none; }
 
 #footer {
   background: #231f20;

@@ -1,4 +1,4 @@
-var content = [ "Home", "Current Issue", "Past Issues", "Topics", "CME", "Resources"];
+var content = [ {text: "Home", link: "/"}, "Current Issue", "Past Issues", "Topics", "CME", "Resources"];
 var journalOptions = [ "Current Issue", "Past Issues", "Upcoming Articles"];
 var articleOptions = [ "All Articles", "Current Article", "Archives"];
 var topics = [ "Acne", "Skin Cancer", "Psoriasis", "Aging", "Cosmetics"];

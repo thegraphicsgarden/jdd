@@ -1,5 +1,5 @@
 Template.subscriptionInfo.rendered = function () {
-	$.getScript( 'javascript/jdd.js');
-	$.getScript( 'javascript/sidebar.js');
-	$.getScript( 'javascript/nav.js');
+	$.getScript( '/javascript/jdd.js');
+	$.getScript( '/javascript/sidebar.js');
+	$.getScript( '/javascript/nav.js');
 };
