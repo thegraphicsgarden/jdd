@@ -1,5 +1,31 @@
 (function(e){
-	var topAdPresent = true;
+	var topBannerHeight, nav, scrollTop;
+
+	setNav = function() {
+		nav = $(".navbar");
+		topBannerHeight = $(".topBanner").outerHeight();
+		scrollTop = $(window).scrollTop();
+		var navVertPosition = topBannerHeight - scrollTop;
+
+		if(navVertPosition < 0) navVertPosition = 0;
+		nav.css({ "margin-top": navVertPosition });
+	}
+
+	//initiate margin-top for nav at document ready || window resize
+	$(document).ready(function() { setNav(); });
+	$(window).resize(function() { setNav(); });
+
+	//handle scrolling for nav
+	$(window).scroll(function() {
+		scrollTop = $(window).scrollTop();
+		topBannerHeight = $(".topBanner").outerHeight();
+		$marginTop = topBannerHeight - scrollTop;
+		
+		if($marginTop < 0) $marginTop = 0;
+		if(scrollTop < 0) $marginTop = topBannerHeight;
+		nav.css({ "margin-top": $marginTop});
+	});
+	/*var topAdPresent = true;
 	$pathname = window.location.pathname;
 	($pathname == '/') ? topAdPresent = true : topAdPresent = false; 
 
@@ -12,7 +38,7 @@
 	var smTopMargin = "80px";
 	var lgTopMargin = "100px";
 
-	/*if(topAdPresent) {
+	if(topAdPresent) {
 		topBanner.css({display: "block"});
 		smTopMargin = "80px";
 		lgTopMargin = "100px";
@@ -37,7 +63,7 @@
 	};
 	setNav = function() { setTopBanner(); };
 	$(document).ready(function() { setNav(); });
-	$( window ).resize(function() {	setTopBanner();	});*/
+	$( window ).resize(function() {	setTopBanner();	});
 
 
 
@@ -53,6 +79,6 @@
 			navbar.css({
 				"margin-top": $marginTop
 			});
-		});
+});*/
 })
 (jQuery);

@@ -46,7 +46,7 @@
   .topBanner {
     height: 80px !important; }
     .topBanner img.topAd {
-      width: 100%; }
+      max-height: 50px; }
 
   #primaryNav {
     height: auto !important; }
@@ -76,6 +76,9 @@
 @media screen and (max-width: 640px) {
   .btn-primary {
     width: 260px !important; } }
+@media screen and (max-width: 490px) {
+  .topBanner img.topAd {
+    width: 100%; } }
 /*****************************GENERAL CSS********************************/
 body {
   font-family: "UniversLight", "Univers", sans-serif !important;
@@ -140,14 +143,14 @@ ul.most {
   font-size: 1.15em;
   padding-top: 20px; }
 
-.navbar-default {
+.navbar {
   background: #820024;
   font-size: 1.3em;
   border-bottom: none;
-  margin-top: 100px;
+  margin-top: 0;
   font-family: 'UniversLight', 'Univers';
   letter-spacing: 0; }
-  .navbar-default a {
+  .navbar a {
     color: white !important;
     text-shadow: none !important; }
 

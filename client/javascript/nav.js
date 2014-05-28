@@ -1,5 +1,5 @@
 (function(e){
-	var navbar = $(".navbar-default");
+/*	var navbar = $(".navbar-default");
 	var topBanner = $(".topBanner");
 	var main = $("#main");
 	var articlesList = $("#articlesList");
@@ -43,7 +43,7 @@
 
 	var test = function () {
 		alert("test");
-	};
+	};*/
 	
 })
 (jQuery);

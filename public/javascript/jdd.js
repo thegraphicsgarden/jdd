@@ -4,5 +4,4 @@
 	articleList.css({
 		height: main.height() + "px"
 	});
-	console.log("test");
 })(jQuery);
