@@ -1,13 +1,59 @@
-var content = [ {text: "Home", link: "/"}, "Current Issue", "Past Issues", "Topics", "CME", "Resources"];
-var journalOptions = [ "Current Issue", "Past Issues", "Upcoming Articles"];
-var articleOptions = [ "All Articles", "Current Article", "Archives"];
-var topics = [ "Acne", "Skin Cancer", "Psoriasis", "Aging", "Cosmetics"];
-var cme = ["CME Activities"];
-var dermMatters = ["DermMatters Blog"];
-var multimediaOptions = ["DermPearls", "Supplements"];
-var resources = ["Buyer's Resource Guide", "Conference Calendar", "International Alliance", "Index Archives", "Issue Archives"];
-var contact = ["Contact Us", "Feedback", "Reprint", "Advertising", "Submit an Article", "Letters to the Editor"];
-var subscribeOptions = ["New Subscriber", "Renew Subscription", "Subscription Information", "Member Profile"];
+var content = [ 
+  {text: "Home", link: "/"}, 
+  {text: "Current Issue", link: "/"}, 
+  {text: "Past Issues", link: "/"}, 
+  {text: "Topics", link: "/"}, 
+  {text: "CME", link: "/"}, 
+  {text: "Resources", link: "/"}
+];
+var journalOptions = [ 
+  {text: "Current Issue", link: "/"}, 
+  {text: "Past Issues", link: "/"}, 
+  {text: "Upcoming Articles", link: "/"}
+];
+var articleOptions = [ 
+  {text: "All Articles", link: "/search/all-articles"}, 
+  {text: "Current Article", link: "/article"}, 
+  {text: "Archives", link: "/article"}
+];
+var topics = [ 
+  {text: "Acne", link: "/search/Acne"},
+  {text: "Skin Cancer", link: "/search/Skin-Cancer"}, 
+  {text: "Psoriasis", link: "/search/Psoriasis"}, 
+  {text: "Aging", link: "/search/Aging"}, 
+  {text: "Cosmetics", link: "/search/Cosmetics"}, 
+];
+var cme = [
+  {text: "CME Activities", link: "/"}
+];
+var dermMatters = [
+  {text: "DermMatters Blog", link: "/"}
+];
+var multimediaOptions = [
+  {text: "DermPearls", link: "/"},
+  {text: "Supplements", link: "/"}
+];
+var resources = [ 
+  {text: "Buyer's Resource Guide", link: "/"},
+  {text: "Conference Calendar", link: "/"},
+  {text: "International Alliance", link: "/"},
+  {text: "Index Archives", link: "/"},
+  {text: "Issue Archives", link: "/"}
+];
+var contact = [
+  {text: "Contact Us", link: "/contact"},
+  {text: "Feedback", link: "/feedback"},
+  {text: "Reprint", link: "/"},
+  {text: "Advertising", link: "/"},
+  {text: "Submit an Article", link: "/"},
+  {text: "Letters to the Editor", link: "/"}
+];
+var subscribeOptions = [
+  {text: "New Subscriber", link: "/"},
+  {text: "Renew Subscription", link: "/"},
+  {text: "Subscription Information", link: "/"},
+  {text: "Member Profile", link: "/"}
+];
 Template.footer.helpers({
   content: content,
   journalOptions: journalOptions,

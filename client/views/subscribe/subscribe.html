@@ -1,9 +1,57 @@
 <template name="subscribe">
 	{{> breadcrumbs}}
 	<div class="container">
-		<article id="mainContent" class="col-sm-12">
-			<h1>Subscribe</h1>
-			<a href="{{pathFor 'subscriptionInfo'}}">Subscription Information</a>
+		<article id="mainContent" class="">
+			<hgroup class="col-xs-12">
+				<h1>Welcome to the Journal of Drugs in Dermatology</h1>
+				<h5>New Subscription > Step 1 of 4</h5>
+			</hgroup>
+			<div class="col-xs-12 col-sm-9">
+
+				<p>To <strong>get started now</strong>, select your subscriber criteria below:</p>
+
+				{{> subscribeFormOne }}
+
+				<div class="clear twenty"></div>
+				<p>The <i>Journal of Drugs in Dermatology</i> (JDD) is a peer-reviewed, MEDLINE ®/ PubMed ® indexed journal that offers strong content of the utmost quality and relevance on drugs, devices, and methods.</p>
+
+				<p>Dermatology professionals based in the United States enjoy a complimentary subscription to the JDD Print edition and instant access to JDDonline; professionals that qualify are listed below:</p>
+
+				<div class="lists col-xs-12 col-sm-6">
+					<h3>Dermatology Professionals</h3>
+					<ul>
+						<li>Dermatologists</li>
+					   	<li>Dermatology Residents</li>
+					   	<li>Dermatology Physician Assistants</li>
+					   	<li>Dermatology Nurses Practitioners</li>
+					   	<li>Dermatology DO</li>
+					   	<li>Dermatology Fellows</li>
+					</ul>
+				</div>
+				<div class="lists col-xs-12 col-sm-6">
+					<h3>Subscription Benefits</h3>
+					<ul>
+						<li>JDD Digital</li>
+					   	<li>JDD in Print</li>
+					   	<li>Latest News a Click Away</li>
+					   	<li>Earn While You Learn</li>
+					   	<li>The Archives</li>
+					   	<li>Pearls of Wisdom</li>
+					   	<li>Supplement Your Knowledge</li>
+						<li>Your Resource Guide</li>
+					</ul>
+				</div>
+
+				<div class="clear forty"></div>
+				<p><a href="{{pathFor 'subscriptionInfo'}}">Click here</a> to learn more about JDD subscription options and the features that JDD members enjoy.</p>
+			</div>
+			<div id="subscriptionSidebar" class="col-xs-12 col-sm-3">
+				<h4>*Open Access Subscribers</h4>
+				<p>Open Access Subscribers enjoy access to abstracts and full text review of some select articles, email alerts with the most current JDD issue and access to CME activities, supplements, DermPearls, and the DermMatters blog. All Open Access articles are marked with  openaccess articles for easy recognition.</p>
+
+				<p>To get unlimited access to JDDonline including full-text articles and the archives, upgrade to a Print and Digital subscription.</p>
+			</div>
+			<div class="clear hundred"></div>
 		</article>
 	</div><!--container-->
 </template>

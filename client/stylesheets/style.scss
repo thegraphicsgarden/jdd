@@ -14,6 +14,11 @@ $border: 1px rgba(0,0,0,.1) solid;
 /*******************************MIXINS*********************************/
 /*@mixin makeBorder($pos) { $pos: 1px rgba(0,0,0,.1) solid; }*/
 /*******************************FONTS**********************************/
+strong { font-family: UniversLTStd-BoldCn; }
+@font-face {
+	font-family: 'UniversLight';
+	src: url("/fonts/Univers47CondensedLight.otf");
+}
 @font-face {
 	font-family: 'Univers';
 	src: url('/fonts/univers57condensed.eot'); /* IE9 Compat Modes */
@@ -21,16 +26,13 @@ $border: 1px rgba(0,0,0,.1) solid;
 	url('/fonts/univers57condensed.woff') format('woff'), /* Modern Browsers */
 	url('/fonts/univers57condensed.ttf')  format('truetype'), /* Safari, Android, iOS */
 	url('/fonts/univers57condensed.svg#svgFontName') format('svg'); /* Legacy iOS */
+	
 }
 @font-face {
-	font-family: 'UniversLight';
-	src: url("/fonts/Univers47CondensedLight.otf");
+	font-family:"UniversBold-BoldCn";
+	src: url("/fonts/UniversLTStd-BoldCn.otf");
+	font-weight: bold;
 }
-@font-face {
-	font-family:"UniversCondensedLight";
-	src: url("/fonts/UniversLTStd-ThinUltraCn.otf")
-}
-
 @font-face {
 	font-family:"Walt";
 	src: url("/fonts/waltograph42.otf")
@@ -129,6 +131,21 @@ ul.most {
 	li {
 		margin-bottom: 23px;
 	}
+}
+$searchHeight: 40px;
+$inputFieldBkg: #efefef;
+select { 
+	height: $searchHeight !important; width: 90%; margin-bottom: 20px;  
+	background: url(/images/select-arraow.png) no-repeat right $inputFieldBkg;
+	/*width: 268px;*/
+	padding-left: 10px !important; padding-right: 10px !important;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	height: 34px;
+	-webkit-appearance: none;
+}
+input[type=text], textarea { height: $searchHeight; width: 100%; max-width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; border: 0; margin-bottom: 20px;
 }
 /********************BOOTSTRAP OVERRIDES*****************************/
 .container {
@@ -325,6 +342,7 @@ ul.most {
 #mainContent {
 	h1 { color: $red; letter-spacing: -2px; }
 	hgroup { 
+		margin-bottom: 20px;
 		h1 { margin-bottom: 0; }
 		h5 { margin-top: 0; letter-spacing: 3px; }
 	}
@@ -368,18 +386,8 @@ $inputFieldBkg: #efefef;
 	* {
 		padding-left: 0 !important;
 	}
-	select { 
-		height: $searchHeight !important; width: 90%; margin-bottom: 40px;  
-		background: url(/images/select-arraow.png) no-repeat right $inputFieldBkg;
-		/*width: 268px;*/
-		padding-left: 10px !important; padding-right: 10px !important;
-		line-height: 1;
-		border: 0;
-		border-radius: 0;
-		height: 34px;
-		-webkit-appearance: none;
+	input[type=text] { height: $searchHeight; width: 100%; max-width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; border: 0; 
 	}
-	input[type=text] { height: $searchHeight; width: 100%; max-width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; border: 0; }
 	.options {
 		clear: both; margin-bottom: 20px; 
 		span { margin-left: 4px; font-size: .8em; }
@@ -396,6 +404,9 @@ input#searchField {
 	color: $textColor;
 }
 /**************************SUBSCRIPTION********************************/
+#subscribeForm{
+	& * { padding-left: 0; }
+}
 #subscriptionTable {
 	font-size: .9em; margin-bottom: 20px;
 	.infoRow {
@@ -416,5 +427,20 @@ input#searchField {
 			.cell { border: none; text-align: left; }
 		}
 		p { line-height: 110%; margin-bottom: 0;}
+	}
+}
+#subscriptionSidebar {
+	h4 { color: $red; font-size: 1em; }
+	p { line-height: 115%; font-size: .9em; }
+}
+.lists {
+	h3 { color: $red; }
+	ul { margin-left: 10px; }
+}
+/*****************************CONTACT*********************************/
+#contactForm {
+	padding-left: 0; 
+	#contactTxt {
+		width: 100%; padding:10px;
 	}
 }

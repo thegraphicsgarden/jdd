@@ -4,22 +4,24 @@
 	var displayBtn = $("#displayArticles");
 	var articlesList = $("#articlesList");
 	var main = $("#main");
+	var mainContent = $("#mainContent");
 	var showHideContainer = $("#showHideContainer");
 
 	collapse = function() {
 		articlesList.hide("slow", function() {
 			main.removeClass("col-sm-10");
+			mainContent.removeClass("col-sm-10");
 			showHideContainer.addClass("container");
 		});
 	};
 	expand = function() {
 		articlesList.show("slow");
 		main.addClass("col-sm-10");
+		mainContent.addClass("col-sm-10");
 		showHideContainer.removeClass("container");
 	};
 
 	displayBtn.click(function() {
-		//console.log("click: " + collapsed);
 		(collapsed) ? expand() : collapse();
 		collapsed = !collapsed;
 		console.log("collapsed: " + collapsed);

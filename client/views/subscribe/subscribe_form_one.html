@@ -1,0 +1,49 @@
+<template name="subscribeFormOne">
+	<form id="subscribeForm">
+		<div class="col-xs-12 col-sm-6">
+			<select>
+				<option>Subscriber Status*</option>
+				{{#each proStatus}}
+				<option>{{.}}</option>
+				{{/each}}
+			</select>		
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<select>
+				<option>Country of Practice*</option>
+				{{#each countries}}
+				<option>{{.}}</option>
+				{{/each}}
+			</select>		
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<select id="preferences">
+				<option>Subscription Preference*</option>
+				{{#each preferences}}
+				<option>{{.}}</option>
+				{{/each}}
+			</select>		
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<select>
+				<option>Subscription Length</option>
+				{{#each length}}
+				<option>{{.}}</option>
+				{{/each}}
+			</select>		
+		</div>
+		<a href="/subscribe" id="continueBtn" class="btn btn-primary">TOTAL $<span>0</span> - CONTINUE</a>
+	</form>
+
+	<script>
+		var continueBtn = $("#continueBtn");
+		var preferences = $("#preferences");
+		preferences.change(function() {
+			$price = 0;
+			$choice = $("#preferences option:selected").text();
+			if($choice == "Print and Digital") $price = 350;
+			else if($choice == "Digital Only") $price = "15/month";
+			continueBtn.children("span").text($price);
+		});
+	</script>
+</template>

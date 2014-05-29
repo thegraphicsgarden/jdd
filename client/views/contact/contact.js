@@ -1,8 +1,4 @@
-Template.search.helpers({
-
-});
-
-Template.search.rendered = function () {
+Template.contact.rendered = function () {
 	$.getScript( '/javascript/jdd.js');
 	$.getScript( '/javascript/sidebar.js');
 	$.getScript( '/javascript/nav.js');

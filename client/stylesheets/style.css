@@ -2,6 +2,13 @@
 /*******************************MIXINS*********************************/
 /*@mixin makeBorder($pos) { $pos: 1px rgba(0,0,0,.1) solid; }*/
 /*******************************FONTS**********************************/
+strong {
+  font-family: UniversLTStd-BoldCn; }
+
+@font-face {
+  font-family: 'UniversLight';
+  src: url("/fonts/Univers47CondensedLight.otf"); }
+
 @font-face {
   font-family: 'Univers';
   src: url("/fonts/univers57condensed.eot");
@@ -10,12 +17,9 @@
   /* Legacy iOS */ }
 
 @font-face {
-  font-family: 'UniversLight';
-  src: url("/fonts/Univers47CondensedLight.otf"); }
-
-@font-face {
-  font-family: "UniversCondensedLight";
-  src: url("/fonts/UniversLTStd-ThinUltraCn.otf"); }
+  font-family: "UniversBold-BoldCn";
+  src: url("/fonts/UniversLTStd-BoldCn.otf");
+  font-weight: bold; }
 
 @font-face {
   font-family: "Walt";
@@ -130,6 +134,30 @@ ul.most {
   line-height: 100%; }
   ul.most li {
     margin-bottom: 23px; }
+
+select {
+  height: 40px !important;
+  width: 90%;
+  margin-bottom: 20px;
+  background: url(/images/select-arraow.png) no-repeat right #efefef;
+  /*width: 268px;*/
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none; }
+
+input[type=text], textarea {
+  height: 40px;
+  width: 100%;
+  max-width: 240px;
+  padding-left: 10px !important;
+  background: #efefef;
+  letter-spacing: 1px;
+  border: 0;
+  margin-bottom: 20px; }
 
 /********************BOOTSTRAP OVERRIDES*****************************/
 .container {
@@ -405,11 +433,13 @@ ul.most {
 #mainContent h1 {
   color: #820024;
   letter-spacing: -2px; }
-#mainContent hgroup h1 {
-  margin-bottom: 0; }
-#mainContent hgroup h5 {
-  margin-top: 0;
-  letter-spacing: 3px; }
+#mainContent hgroup {
+  margin-bottom: 20px; }
+  #mainContent hgroup h1 {
+    margin-bottom: 0; }
+  #mainContent hgroup h5 {
+    margin-top: 0;
+    letter-spacing: 3px; }
 
 ul#pagination {
   text-align: center;
@@ -448,19 +478,6 @@ ul#pagination {
   margin: 10px auto; }
 .searchArchives * {
   padding-left: 0 !important; }
-.searchArchives select {
-  height: 40px !important;
-  width: 90%;
-  margin-bottom: 40px;
-  background: url(/images/select-arraow.png) no-repeat right #efefef;
-  /*width: 268px;*/
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  line-height: 1;
-  border: 0;
-  border-radius: 0;
-  height: 34px;
-  -webkit-appearance: none; }
 .searchArchives input[type=text] {
   height: 40px;
   width: 100%;
@@ -498,6 +515,9 @@ input#searchField {
   color: #3e3e3d; }
 
 /**************************SUBSCRIPTION********************************/
+#subscribeForm * {
+  padding-left: 0; }
+
 #subscriptionTable {
   font-size: .9em;
   margin-bottom: 20px; }
@@ -525,3 +545,22 @@ input#searchField {
     #subscriptionTable .infoRow p {
       line-height: 110%;
       margin-bottom: 0; }
+
+#subscriptionSidebar h4 {
+  color: #820024;
+  font-size: 1em; }
+#subscriptionSidebar p {
+  line-height: 115%;
+  font-size: .9em; }
+
+.lists h3 {
+  color: #820024; }
+.lists ul {
+  margin-left: 10px; }
+
+/*****************************CONTACT*********************************/
+#contactForm {
+  padding-left: 0; }
+  #contactForm #contactTxt {
+    width: 100%;
+    padding: 10px; }
