@@ -53,7 +53,13 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 		h3 { font-size: .9em !important; }
 	}
 }
-
+@media screen and (max-width: 1050px) {
+	#sidebar {
+		h3 { 
+			&.activeTab, &.inactiveTab { font-size: 1em; }
+		}
+	}
+}
 @media screen and (max-width: 992px) { /*tablets*/
 	#slider {
 		h1 {
@@ -69,7 +75,7 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 	#primaryNav {
 		height: auto !important;
 	}
-	#main { margin-top: 80px !important; }
+	#main { margin-top: 80px; }
 	#slider {
 		height: 300px !important; padding-top: 0 !important; text-align: center;
 		h1 { font-size: 4.5em !important; }
@@ -110,9 +116,11 @@ p {
 }
 .clear { 
 	clear: both; 
-	&.twenty { margin-top: 20px; }
-	&.forty { margin-top: 40px; }
-	&.hundred { margin-top: 100px; }
+	&.ten { height: 10px; }
+	&.twenty { height: 20px; }
+	&.forty { height: 40px; }
+	&.fifty { height: 50px; }
+	&.hundred { height: 100px; }
 }
 .centered { text-align: center; }
 ul { list-style: none; padding-left: 0; }
@@ -142,7 +150,7 @@ ul.most {
 .navbar-header {
 	a.navbar-brand {
 		margin-top: -5px;
-		img { height: 64px !important; }
+		img { height: 50px  !important; } /*64px*/
 	}
 }
 /******************************************************************/
@@ -159,9 +167,9 @@ ul.most {
 	img.topAd { max-width: 557px; }
 }
 #primaryNav {
-	height: 80px !important; padding-right: 20px;
+	height: 80px; padding-right: 20px;
 	ul.navbar-right {
-		padding-top: 16px;
+		padding-top: 10px;/*16px;*/
 		li.navImg { margin-top: -8px; }
 	}
 }
@@ -264,7 +272,10 @@ ul.most {
 }
 #sidebar {
 	max-width: 300px; letter-spacing: 1px; color: $textColor ;
-	h3 { margin-bottom: 10px; }
+	h3 { 
+		margin-bottom: 10px; 
+		&.activeTab, &.inactiveTab { margin-bottom: 0 !important; }
+	}
 	.btn { width: 100%; }
 	img { width: 100%; }
 	img.tallAd { max-width: 160px !important; }
@@ -277,7 +288,7 @@ ul.most {
 .mostReadCited{
 	h3 { 
 		border: $border; border-bottom: none; padding: 10px 5px 5px 5px; color: $link;
-		display: inline-block; margin-right: 10px; margin-bottom: 0;
+		display: inline-block; margin-right: 0; margin-bottom: 0;
 		&.activeTab { 
 			background: whitesmoke; color: $textColor;
 		}
@@ -353,22 +364,33 @@ $searchHeight: 40px;
 $inputFieldBkg: #efefef;
 
 .searchArchives {
+	h4 { margin: 10px auto; }
 	* {
 		padding-left: 0 !important;
 	}
-	select { height: $searchHeight !important; width: 90%; margin-bottom: 40px;  }
-	input[type=text] { height: $searchHeight; width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; }
+	select { 
+		height: $searchHeight !important; width: 90%; margin-bottom: 40px;  
+		background: url(/images/select-arraow.png) no-repeat right $inputFieldBkg;
+		/*width: 268px;*/
+		padding-left: 10px !important; padding-right: 10px !important;
+		line-height: 1;
+		border: 0;
+		border-radius: 0;
+		height: 34px;
+		-webkit-appearance: none;
+	}
+	input[type=text] { height: $searchHeight; width: 100%; max-width: 240px; padding-left: 10px !important; background: $inputFieldBkg; letter-spacing: 1px; border: 0; }
 	.options {
 		clear: both; margin-bottom: 20px; 
 		span { margin-left: 4px; font-size: .8em; }
 	}
-	.btn { width: 300px; }
+	.btn { width: 160px; margin-top: 11px; }
 }
 input#searchField {
 	height: $searchHeight; margin-top: -2px; background: $inputFieldBkg; width: 260px; padding-left: 10px; padding-top: 5px;
 }
 .searchBtn {
-	height: $searchHeight; width: 160px; padding-top: 10px; margin-left: -4px; margin-top: 6px;
+	height: $searchHeight; width: 160px; padding-top: 10px; margin-left: -4px; margin-top: 7px;
 }
 #activeSearch {
 	color: $textColor;

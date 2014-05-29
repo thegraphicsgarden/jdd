@@ -1,96 +1,15 @@
 <template name="search">
 	{{> breadcrumbs}}
 	<div class="container">
-		<article id="mainContent" class="searchArchives col-sm-10">
+		<article id="mainContent" class="searchArchives col-xs-12 col-sm-10">
 			<hgroup>
 				<h1>Search Archives</h1>
 				<h5>Input your search criteria using the form below.</h5>
 			</hgroup>
 
-			<div class="col-xs-12 col-sm-8">
-				<h5>Basic Search</h5>
-				<input type="text" name="author" placeholder="Search JDD Online">	
-				<a href="/search/test" class="searchBtn btn btn-primary">SEARCH</a>
-			</div>
-			<div class="clear"></div>
-			<div class="col-xs-12">
-				<h5>Advanced Search</h5>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<select>
-					<option>From Year</option>
-					{{#each years}}
-					<option>From {{.}}</option>
-					{{/each}}
-				</select>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<select>
-					<option>From Issue</option>
-					{{#each issues}}
-					<option>Issue {{.}}</option>
-					{{/each}}
-				</select>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<select>
-					<option>To Year</option>
-					{{#each years}}
-					<option>To {{.}}</option>
-					{{/each}}
-				</select>
-			</div>
-			<div class="col-xs-12 col-sm-3">
-				<select>
-					<option>To Issue</option>
-					{{#each issues}}
-					<option>Issue {{.}}</option>
-					{{/each}}
-				</select>
-			</div>
-
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="title" placeholder="Title">
-				{{> radioOptions}}			
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="author" placeholder="Author">	
-				{{> radioOptions}}				
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="abstract" placeholder="Abstract">
-				{{> radioOptions}}					
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="section" placeholder="Section">
-				{{> radioOptions}}				
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="companyName" placeholder="Company Name">
-				{{> radioOptions}}			
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="productName" placeholder="Product Name">	
-				{{> radioOptions}}				
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="abstract" placeholder="Abstract">
-				{{> radioOptions}}					
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="title" placeholder="Title">
-				{{> radioOptions}}				
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<input type="text" name="title" placeholder="Title">
-				{{> radioOptions}}			
-			</div>
-			<div class="col-xs-12 col-sm-8">	
-				<p><i>Articles are encrypted; any PDFs printed from this website will include a JDD copyright protection watermark.</i></p>
-			</div>
-			<div class="col-xs-12 col-sm-4">
-				<a href="/search/test" class="searchBtn btn btn-primary">SEARCH</a>
-			</div>
+			{{> basicSearch}}
+			
+			{{> advancedSearch }}
 		</article>
 	</div><!--container-->
 </template>

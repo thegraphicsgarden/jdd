@@ -1,9 +1,14 @@
 (function(e){
-	var topBannerHeight, nav, scrollTop;
+	var topBannerHeight, nav, scrollTop, primaryNav;
 
 	//setting up the position of the top nav
 	setNav = function() {
 		nav = $(".navbar");
+		primaryNav = $("#primaryNav");
+		if($(window).width() > 768) {
+			primaryNav.css({height: 80}); //maybe take ths out
+			console.log("big");
+		}
 		topBannerHeight = $(".topBanner").outerHeight();
 		scrollTop = $(window).scrollTop();
 		var navVertPosition = topBannerHeight - scrollTop;
@@ -26,5 +31,5 @@
 		if(scrollTop < 0) $marginTop = topBannerHeight;
 		nav.css({ "margin-top": $marginTop});
 	});
-})
-(jQuery);
+
+})(jQuery);

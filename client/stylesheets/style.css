@@ -37,6 +37,9 @@
     font-size: 1.1em !important; }
   #slider h3 {
     font-size: .9em !important; } }
+@media screen and (max-width: 1050px) {
+  #sidebar h3.activeTab, #sidebar h3.inactiveTab {
+    font-size: 1em; } }
 @media screen and (max-width: 992px) {
   /*tablets*/
   #slider h1 {
@@ -52,7 +55,7 @@
     height: auto !important; }
 
   #main {
-    margin-top: 80px !important; }
+    margin-top: 80px; }
 
   #slider {
     height: 300px !important;
@@ -105,12 +108,16 @@ p {
 
 .clear {
   clear: both; }
+  .clear.ten {
+    height: 10px; }
   .clear.twenty {
-    margin-top: 20px; }
+    height: 20px; }
   .clear.forty {
-    margin-top: 40px; }
+    height: 40px; }
+  .clear.fifty {
+    height: 50px; }
   .clear.hundred {
-    margin-top: 100px; }
+    height: 100px; }
 
 .centered {
   text-align: center; }
@@ -157,9 +164,10 @@ ul.most {
     text-shadow: none !important; }
 
 .navbar-header a.navbar-brand {
-  margin-top: -5px; }
+  margin-top: -5px;
+  /*64px*/ }
   .navbar-header a.navbar-brand img {
-    height: 64px !important; }
+    height: 50px  !important; }
 
 /******************************************************************/
 .topBanner {
@@ -175,10 +183,11 @@ ul.most {
     max-width: 557px; }
 
 #primaryNav {
-  height: 80px !important;
+  height: 80px;
   padding-right: 20px; }
   #primaryNav ul.navbar-right {
-    padding-top: 16px; }
+    padding-top: 10px;
+    /*16px;*/ }
     #primaryNav ul.navbar-right li.navImg {
       margin-top: -8px; }
 
@@ -326,6 +335,8 @@ ul.most {
   color: #3e3e3d; }
   #sidebar h3 {
     margin-bottom: 10px; }
+    #sidebar h3.activeTab, #sidebar h3.inactiveTab {
+      margin-bottom: 0 !important; }
   #sidebar .btn {
     width: 100%; }
   #sidebar img {
@@ -349,7 +360,7 @@ ul.most {
   padding: 10px 5px 5px 5px;
   color: #00aab5;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0;
   margin-bottom: 0; }
   .mostReadCited h3.activeTab {
     background: whitesmoke;
@@ -433,18 +444,31 @@ ul#pagination {
   background-position: 200px 300px; }
 
 /*******************************SEARCH*********************************/
+.searchArchives h4 {
+  margin: 10px auto; }
 .searchArchives * {
   padding-left: 0 !important; }
 .searchArchives select {
   height: 40px !important;
   width: 90%;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  background: url(/images/select-arraow.png) no-repeat right #efefef;
+  /*width: 268px;*/
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none; }
 .searchArchives input[type=text] {
   height: 40px;
-  width: 240px;
+  width: 100%;
+  max-width: 240px;
   padding-left: 10px !important;
   background: #efefef;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  border: 0; }
 .searchArchives .options {
   clear: both;
   margin-bottom: 20px; }
@@ -452,7 +476,8 @@ ul#pagination {
     margin-left: 4px;
     font-size: .8em; }
 .searchArchives .btn {
-  width: 300px; }
+  width: 160px;
+  margin-top: 11px; }
 
 input#searchField {
   height: 40px;
@@ -467,7 +492,7 @@ input#searchField {
   width: 160px;
   padding-top: 10px;
   margin-left: -4px;
-  margin-top: 6px; }
+  margin-top: 7px; }
 
 #activeSearch {
   color: #3e3e3d; }
