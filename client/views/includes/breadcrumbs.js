@@ -14,7 +14,7 @@ makeCrumbs = function(endRemoveCount) {
 
 hasTopic = function (array) {
 	for(var i = 0; i < array.length; i++) {
-		if(array[i] == "article") {
+		if(array[i] == "article" || array[i] == "fed-article") {
 			return "Acne";
 		}
 	}

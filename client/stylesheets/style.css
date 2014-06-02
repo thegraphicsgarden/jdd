@@ -159,6 +159,11 @@ input[type=text], textarea {
   border: 0;
   margin-bottom: 20px; }
 
+textarea {
+  max-width: none;
+  min-height: 300px;
+  padding: 10px; }
+
 /********************BOOTSTRAP OVERRIDES*****************************/
 .container {
   /*max-width: 940px;*/
@@ -255,6 +260,12 @@ input[type=text], textarea {
     #main figure.left img {
       width: 100%; }
 
+.image-bkg {
+  background: url(/images/topic1.bkg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100px 300px; }
+
 #slider {
   height: 400px;
   color: white;
@@ -320,7 +331,14 @@ input[type=text], textarea {
   color: #909090;
   margin-top: 110px;
   overflow: scroll;
-  border-right: 1px #f2f2f2 solid; }
+  border-right: 1px rgba(0, 0, 0, 0.1) solid;
+  -moz-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.1);
+  background: #f9f9f9;
+  background: #fafafa;
+  background-image: url("/images/pattern-cqtm.png");
+  background-repeat: repeat; }
   #articlesList h3 {
     font-size: 1.5em;
     letter-spacing: -1px;
@@ -468,10 +486,52 @@ ul#pagination {
 
 /****************************ARTICLE PAGE******************************/
 #articlePage {
-  background: url(/images/topic1.bkg.jpg);
+  /*background: url(/images/topic1.bkg.jpg);*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 200px 300px; }
+  #articlePage h1 {
+    word-wrap: break-word; }
+  #articlePage p.basic-jdd-basic-l {
+    margin-bottom: 10px; }
+    #articlePage p.basic-jdd-basic-l span.article-general-article-boxheads {
+      font-size: 2.3em;
+      font-family: "Bembo";
+      letter-spacing: -2px;
+      text-transform: capitalize;
+      color: #820024; }
+  #articlePage h2 {
+    color: #820024;
+    font-size: 2.3em;
+    font-family: "Bembo";
+    letter-spacing: -2px; }
+  #articlePage h3 {
+    color: #820024; }
+  #articlePage #article-correspondence p {
+    margin-bottom: 0px; }
+  #articlePage #callsToAction {
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: center; }
+    #articlePage #callsToAction a {
+      margin: auto 10px;
+      white-space: nowrap; }
+    #articlePage #callsToAction .btn-primary {
+      padding: 5px 10px;
+      width: 100%;
+      height: 30px;
+      font-family: "UniversLight"; }
+    #articlePage #callsToAction #info {
+      display: none;
+      border-bottom: 1px solid #e1e1e1;
+      border-top: 1px solid #e1e1e1;
+      margin: 20px auto;
+      padding-bottom: 5px; }
+      #articlePage #callsToAction #info h4 {
+        color: #820024; }
+      #articlePage #callsToAction #info p {
+        margin-bottom: 10px;
+        display: none; }
 
 /*******************************SEARCH*********************************/
 .searchArchives h4 {
@@ -561,6 +621,5 @@ input#searchField {
 /*****************************CONTACT*********************************/
 #contactForm {
   padding-left: 0; }
-  #contactForm #contactTxt {
-    width: 100%;
-    padding: 10px; }
+  #contactForm * {
+    padding-left: 0; }

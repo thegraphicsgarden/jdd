@@ -1,0 +1,78 @@
+<template name="fedArticle">
+	{{> breadcrumbs}}
+	<div id="articlePage" class="container">
+		<article id="mainContent" class="col-xs-12 col-sm-8">
+			<hgroup>
+				<h1>What is New in Fungal Pharmacotherapeutics?</h1>
+				<h5>April 2014 | Volume 13 | Issue 4</h5>
+			</hgroup>
+			<p><i>Ethan T. Routt MD,<sup>a</sup> Shelbi C. Jim On MD,<sup>a</sup> Joshua A. Zeichner MD,<sup>a</sup> and Leon H. Kircik MD<sup>b,c,d</sup></i></p>
+			<p><sup>a</sup>Icahn School of Medicine at Mount Sinai, New York, NY <sup>b</sup>Department of Dermatology, Indiana University School of Medicine, Indianapolis, IN <sup>c</sup>Physicians Skin Care, PLLC, Louisville, KY <sup>d</sup>Department of Dermatology, Mount Sinai School of Medicine, New York, NY</p>
+
+			<h2>Abstract</h2>
+			<p>Approximately 20-25% of the population worldwide is affected by superficial cutaneous mycoses (SCM). SCM are cutaneous fungal infections with a wide array of systemic and topical treatment options. However, successful therapeutic outcomes are limited by patient non-adherence, medication side effects, potential drug interactions, antifungal resistance and disease recurrence. Advances in formulation technology have allowed for the development of more effective and safer therapies. In this article we will review several new and emerging pharmacotherapeutics for onychomycosis and tinea pedis.</p>
+
+			<p><i>J Drugs Dermatol. 2014;13(4):391-395.</i></p>
+
+			<div id="callsToAction" class="col-xs-12">
+				<div class="col-xs-12 col-sm-6">
+					<a class="purchase btn btn-primary" href="#">Purchase Original Article</a>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<a class="request btn btn-primary" href="#">Request Reprints</a><br/>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<a class="upgrade btn btn-primary" href="#">Upgrade Account</a><br/>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<a class="savePrint btn btn-primary" href="#">Save/Print to PDF</a><br/>
+				</div>
+				<div id="info" class="col-xs-12">
+					<h4>Purchase Original Article</h4>
+
+					<!--Purchase-->
+					<p class="purchase">Get instant access to the fully formatted PDF of original manuscript as it was published in the JDD.</p>
+
+					<!--Request-->
+					<p class="request">Contact a member of the JDD Sales Team for reprints, e-prints or international translation requests.</p>
+
+					<!--Upgrade-->
+					<p class="upgrade">To get access to JDD's full-text articles and archives, upgrade here.</p>
+
+					<!--Save/Print-->
+					<p class="savePrint">Save or Print to PDF the full-text of article as it appears on the JDD site.</p>
+					
+					<a id="proceed" href="">&rarr; proceed</a> |
+					<a id="infoClose" href="">&uarr; close</a>
+				</div>
+				<div class="col-xs-12">
+					<a href="/login">Login Now</a> |
+					<a href="/upgrade">Upgrade Account</a>
+				</div>
+			</div>
+
+			{{> testArticle}}
+			<ul id="pagination">
+				<li><a class="activePage" href="#">1</a></li>
+				<li><a href="{{pathFor 'article'}}">2</a></li>
+				<li><a href="{{pathFor 'article'}}">3</a></li>
+			</ul>
+			<section id="articleTeasers" class="col-xs-12">
+				<h3>Related Articles</h3> 
+				{{#each articleTeasers}}
+				<div class="articleTeaser col-xs-12 col-sm-4">
+					<h4><a href="{{pathFor 'article'}}">{{title}}</a></h4>
+					<p>{{teaser}} <a href="{{pathFor 'article'}}">more</a></p>
+				</div>
+					<!--{{#if third}}
+						<div class="hidden-xs col-sm-3"></div>
+						<div class="clear"></div>
+						{{/if}}-->
+						{{/each}}
+					</section>
+				</article>
+				<aside id="sidebar" class="col-xs-12 col-sm-4">
+					{{> sidebar}}
+				</aside>
+			</div><!--container-->
+		</template>
