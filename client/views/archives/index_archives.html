@@ -1,0 +1,31 @@
+<template name="indexArchives">
+	{{> breadcrumbs}}
+	<div id="mainContent" class="container">
+		<hgroup class="col-xs-12">
+			<h1>Index Archives</h1>
+		</hgroup>
+
+		
+		<div class="col-xs-12">
+			<p>As part of the JDD <span class="green">green initiative</span>, starting in 2009, the article and author indexes will be published exclusively online. In previous years these have been printed in the December Issue, but for your convenience and for environmental consciousness, the indexes will now be available electronically.</p>
+		
+			{{#each years}}
+			<div class="issue col-xs-6 col-sm-3 col-md-2">
+				<a href="#"><img alt="Volume {{../volume}} Issue {{issue}} {{../year}}" src="/images/covers/{{.}}AuthorIndex.jpg" /></a>
+				<hgroup>
+					<h4>{{.}} Author Index</h4>
+					<a href="#">Download</a>
+				</hgroup>
+			</div>
+			<div class="issue col-xs-6 col-sm-3 col-md-2">
+				<a href="#"><img alt="Volume {{../volume}} Issue {{issue}} {{../year}}" src="/images/covers/{{.}}SubjectIndex.jpg" /></a>
+				<hgroup>
+					<h4>{{.}} Article Index</h4>
+					<a href="#">Download</a>
+				</hgroup>
+			</div>
+			{{/each}}
+		</div>		
+		<div class="clear hundred"></div>
+	</div><!--container-->
+</template>

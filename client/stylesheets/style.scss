@@ -9,6 +9,7 @@ $btnRollover: #3E3E3D;
 $gold: #cca87f;
 $borderColor: #e1e1e1;
 $shadow: rgba(0,0,0,.1);
+$green: #599a3e;
 
 $border: 1px rgba(0,0,0,.1) solid;
 /*******************************MIXINS*********************************/
@@ -132,6 +133,7 @@ ul.most {
 		margin-bottom: 23px;
 	}
 }
+.green { color: $green; }
 $searchHeight: 40px;
 $inputFieldBkg: #efefef;
 select { 
@@ -442,6 +444,21 @@ input#searchField {
 }
 #activeSearch {
 	color: $textColor;
+}
+/*****************************ARCHIVES*********************************/
+.issue {
+	 text-align: center;
+	hgroup {
+		height: 100px;
+		h5.volumeIssue, h4.issueTitle { letter-spacing: 0 !important; }
+	}
+	img { 
+		width: 140px; margin-bottom: 10px; 
+
+	}
+	img:hover {
+		box-shadow: 0 0 10px #555;
+	}
 }
 /**************************SUBSCRIPTION********************************/
 #subscribeForm{
