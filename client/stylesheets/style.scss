@@ -105,6 +105,10 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 body { 
 	padding: 0; margin: 0; font-family: $font-stack !important; font-size: 1.5em;
 }
+html, body {
+	max-width: 100%;
+    overflow-x: hidden;
+}
 section, article, aside, hgroup { display: block; }
 h1 { font-family: 'Bembo'; }
 a { 
