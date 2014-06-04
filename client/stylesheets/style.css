@@ -47,13 +47,24 @@ strong {
 @media screen and (max-width: 992px) {
   /*tablets*/
   #slider h1 {
-    font-size: 3.5em !important; } }
+    font-size: 3.5em !important; }
+
+  .topBanner img.topAd {
+    float: right;
+    margin-right: 20px; } }
+@media screen and (max-width: 815px) {
+  .topBanner {
+    background-position: 20px 23px, 0 0 , 0 0 !important;
+    background-size: 137px 75px, auto, auto !important; } }
 @media screen and (max-width: 768px) {
   /*phones*/
   .topBanner {
-    height: 80px !important; }
+    height: 80px !important;
+    background-position: 20px 17px, 0 0 , 0 0 !important;
+    background-size: 92px 50px, auto, auto !important; }
     .topBanner img.topAd {
-      max-height: 50px; }
+      max-height: 50px;
+      margin-top: -4px !important; }
 
   #primaryNav {
     height: auto !important; }
@@ -75,7 +86,7 @@ strong {
   #featuredArticle h1 {
     font-size: 2.5em !important; }
 
-  img#jddLogo {
+  img.jddLogo {
     height: 100% !important; }
 
   #sidebar {
@@ -83,6 +94,18 @@ strong {
 @media screen and (max-width: 640px) {
   .btn-primary {
     width: 260px !important; } }
+@media screen and (max-width: 568px) {
+  .topBanner {
+    background-size: 0 0, auto, auto !important; }
+    .topBanner img.topAd {
+      float: none !important; }
+
+  .navbar-header a.navbar-brand {
+    margin-top: -7px;
+    /*64px*/ }
+    .navbar-header a.navbar-brand img {
+      height: 37px !important;
+      opacity: 1 !important; } }
 @media screen and (max-width: 490px) {
   .topBanner img.topAd {
     width: 100%; } }
@@ -198,29 +221,42 @@ textarea {
   border-bottom: none;
   margin-top: 100px;
   font-family: 'UniversLight', 'Univers';
-  letter-spacing: 0; }
+  letter-spacing: 0;
+  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.6); }
   .navbar a {
     color: white !important;
     text-shadow: none !important; }
 
 .navbar-header a.navbar-brand {
-  margin-top: -5px;
+  margin-top: -8px;
   /*64px*/ }
   .navbar-header a.navbar-brand img {
-    height: 50px  !important; }
+    height: 50px;
+    opacity: 0; }
 
 /******************************************************************/
 .topBanner {
   padding-top: 20px;
-  height: 100px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #423e3f), color-stop(1, #292627));
-  background-image: -o-linear-gradient(bottom, #423e3f 0%, #292627 100%);
-  background-image: -moz-linear-gradient(bottom, #423e3f 0%, #292627 100%);
-  background-image: -webkit-linear-gradient(bottom, #423e3f 0%, #292627 100%);
-  background-image: -ms-linear-gradient(bottom, #423e3f 0%, #292627 100%);
-  background-image: linear-gradient(to bottom, #423e3f 0%, #292627 100%); }
+  height: 120px;
+  overflow: hidden;
+  background: #292627;
+  background-image: url("/images/jdd-logo.png"), url("/images/ZenBG-1.png"), url("/images/ZenBG-2.png");
+  background-repeat: no-repeat, repeat-x, repeat;
+  background-position: 20px 10px, 0 0 , 0 0;
+  background-size: 182px 100px, auto, auto; }
+  .topBanner img.jddLogo {
+    height: 100px;
+    margin-top: -8px; }
   .topBanner img.topAd {
-    max-width: 557px; }
+    max-width: 557px;
+    margin-top: 6px; }
+  .topBanner .btn-primary {
+    width: 220px !important;
+    margin-top: 10px; }
+  .topBanner .container {
+    width: 100%; }
+    .topBanner .container .col-xs-12 {
+      padding: 0; }
 
 #primaryNav {
   height: 80px;
@@ -589,7 +625,9 @@ input#searchField {
     .issue hgroup h5.volumeIssue, .issue hgroup h4.issueTitle {
       letter-spacing: 0 !important; }
   .issue img {
-    width: 140px;
+    width: 100%;
+    max-width: 180px;
+    /*140px*/
     margin-bottom: 10px; }
   .issue img:hover {
     box-shadow: 0 0 10px #555; }

@@ -9,6 +9,7 @@ $btnRollover: #3E3E3D;
 $gold: #cca87f;
 $borderColor: #e1e1e1;
 $shadow: rgba(0,0,0,.1);
+$darkShadow: rgba(0,0,0,.6);
 $green: #599a3e;
 
 $border: 1px rgba(0,0,0,.1) solid;
@@ -69,11 +70,22 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 			font-size: 3.5em !important;
 		}
 	}
+	.topBanner {
+		img.topAd { float: right; margin-right: 20px; }
+	}
+}
+@media screen and (max-width: 815px) {
+	.topBanner {
+		background-position: 20px 23px, 0 0 , 0 0 !important;
+		background-size: 137px 75px, auto, auto !important;
+	}
 }
 @media screen and (max-width: 768px) { /*phones*/
 	.topBanner {
 		height: 80px !important;
-		img.topAd { max-height: 50px; }
+		background-position: 20px 17px, 0 0 , 0 0 !important;
+		background-size: 92px 50px, auto, auto !important;
+		img.topAd { max-height: 50px; margin-top: -4px !important; }
 	}
 	#primaryNav {
 		height: auto !important;
@@ -88,13 +100,25 @@ $font-stack: 'UniversLight', 'Univers', sans-serif;
 	#featuredArticle { 
 		h1 { font-size: 2.5em !important; }
 	}
-	img#jddLogo { height: 100% !important; }
+	img.jddLogo { height: 100% !important; }
 	#sidebar {
 		max-width: 100% !important;
 	}
 }
 @media screen and (max-width: 640px) { 
 	.btn-primary { width: 260px !important; }
+}
+@media screen and (max-width: 568px) { 
+	.topBanner {
+		background-size: 0 0, auto, auto !important;
+		img.topAd { float: none !important; }
+	}
+	.navbar-header {
+		a.navbar-brand {
+			margin-top: -7px;
+			img { height: 37px !important; opacity: 1 !important; } /*64px*/
+		}
+	}
 }
 @media screen and (max-width: 490px) { 
 	.topBanner {
@@ -107,7 +131,7 @@ body {
 }
 html, body {
 	max-width: 100%;
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 section, article, aside, hgroup { display: block; }
 h1 { font-family: 'Bembo'; }
@@ -168,27 +192,33 @@ textarea { max-width: none; min-height: 300px; padding:10px; }
 .btn-primary { background: $red; border: none; width: 300px; height: 60px; max-width: 512px; margin-bottom: 10px !important; font-size: 1.15em; padding-top: 20px; }
 .navbar {
 	background: $red; font-size: 1.3em; border-bottom: none; margin-top: 100px;
-	font-family: 'UniversLight', 'Univers'; letter-spacing: 0;
+	font-family: 'UniversLight', 'Univers'; letter-spacing: 0; box-shadow: 0 -4px 4px $darkShadow;
 	a { color: white !important; text-shadow: none !important; }
 }
 .navbar-header {
 	a.navbar-brand {
-		margin-top: -5px;
-		img { height: 50px  !important; } /*64px*/
+		margin-top: -8px;
+		img { height: 50px; opacity: 0; } /*64px*/
 	}
 }
 /******************************************************************/
 .topBanner {
-	padding-top: 20px; height: 100px;
-	background-image: -webkit-gradient(
-		linear, left top, left bottom, color-stop(0, #423E3F), color-stop(1, #292627)
-		);
-	background-image: -o-linear-gradient(bottom, #423E3F 0%, #292627 100%);
-	background-image: -moz-linear-gradient(bottom, #423E3F 0%, #292627 100%);
-	background-image: -webkit-linear-gradient(bottom, #423E3F 0%, #292627 100%);
-	background-image: -ms-linear-gradient(bottom, #423E3F 0%, #292627 100%);
-	background-image: linear-gradient(to bottom, #423E3F 0%, #292627 100%);
-	img.topAd { max-width: 557px; }
+	padding-top: 20px; height: 120px; overflow: hidden;
+	background: #292627;
+	background-image: url("/images/jdd-logo.png"), url("/images/ZenBG-1.png"), url("/images/ZenBG-2.png");
+	background-repeat: no-repeat, repeat-x, repeat;
+	background-position: 20px 10px, 0 0 , 0 0;
+	background-size: 182px 100px, auto, auto;
+	img.jddLogo { height: 100px; margin-top: -8px; }
+	img.topAd { max-width: 557px; margin-top: 6px; }
+	.btn-primary { width: 220px !important; margin-top: 10px; }
+
+	.container { 
+		width: 100%;
+		.col-xs-12 { 
+			padding: 0;
+		}
+	}
 }
 #primaryNav {
 	height: 80px; padding-right: 20px;
@@ -276,14 +306,14 @@ textarea { max-width: none; min-height: 300px; padding:10px; }
 }
 #articlesList { overflow-y: scroll;
 	color: $lightGrey; margin-top: 110px; overflow: scroll; border-right: 1px $shadow solid; 
-	 	-moz-box-shadow:    inset 0 0 7px $shadow;
-   	 -webkit-box-shadow:	inset 0 0 7px $shadow;
-   			 box-shadow:    inset 0 0 7px $shadow;
-   	background: #f9f9f9;
+	-moz-box-shadow:    inset 0 0 7px $shadow;
+	-webkit-box-shadow:	inset 0 0 7px $shadow;
+	box-shadow:    inset 0 0 7px $shadow;
+	background: #f9f9f9;
 
-   	background: #fafafa;
-background-image: url("/images/pattern-cqtm.png");
-background-repeat: repeat;
+	background: #fafafa;
+	background-image: url("/images/pattern-cqtm.png");
+	background-repeat: repeat;
 	h3 {
 		font-size: 1.5em; letter-spacing: -1px; line-height: 90%; margin-bottom: 0; word-wrap: break-word;
 		a { color: $lightRed !important; }
@@ -451,14 +481,13 @@ input#searchField {
 }
 /*****************************ARCHIVES*********************************/
 .issue {
-	 text-align: center;
+	text-align: center;
 	hgroup {
 		height: 100px;
 		h5.volumeIssue, h4.issueTitle { letter-spacing: 0 !important; }
 	}
 	img { 
-		width: 140px; margin-bottom: 10px; 
-
+		width: 100%; max-width: 180px; /*140px*/ margin-bottom: 10px; 
 	}
 	img:hover {
 		box-shadow: 0 0 10px #555;
