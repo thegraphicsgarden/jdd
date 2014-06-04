@@ -5,39 +5,18 @@
 			<h1>Supplement Library</h1>
 		</hgroup>
 
-		{{#each allIssues}}
-			{{#if greaterThan2010 year}}
-				{{#if not2014 year}}
-				<div class="col-xs-12">
-					<h2>{{year}}</h2>
-				</div>
-				{{/if}}
-			{{#each issues}}
-			<div class="issue col-xs-6 col-sm-3 col-md-2">
-				<a href="#"><img alt="Volume {{../volume}} Issue {{issue}} {{../year}}" src="/images/covers/{{../volume}}_{{issue}}_cover.jpg" /></a>
+		{{#each supplements}}
+			<article class="supplement col-xs-12">
+				<figure>
+					<a href="{{pathFor 'fedArticle'}}"><img src="/images/library/{{image}}" /></a>
+					<a href="{{pathFor 'fedArticle'}}" class="btn btn-primary">Details</a>
+				</figure>
 				<hgroup>
-					<h5 class="volumeIssue">Volume {{../volume}} | Issue {{issue}}</h5>
-					<h4>{{month}} {{../year}}</h4>
-					<h4 class="issueTitle"><a href="#">Title of Issue</a></h4>
+					<h3>{{title}}</h3>
+					<h4 class="byline">{{byline}}</h4>
 				</hgroup>
-			</div>				
-			{{/each}}
-			<div class="col-xs-12">
-				<hr/>
-			</div>
-			{{/if}}
-		{{/each}}
-
-		<div class="clear"></div>
-		{{#each allIssues}}
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<h4>{{year}}</h4>
-			<ul>
-				{{#each issues}}
-				<li><a href="#">Volume {{../volume}} | Issue {{issue}} | {{month}}</a></li>
-				{{/each}}
-			</ul>
-		</div>
+				<p>{{teaser}}</p>
+			</article>
 		{{/each}}
 		<div class="clear hundred"></div>
 	</div><!--container-->

@@ -632,6 +632,27 @@ input#searchField {
   .issue img:hover {
     box-shadow: 0 0 10px #555; }
 
+/****************************LIBRARY***********************************/
+.supplement {
+  margin-bottom: 40px; }
+  .supplement p {
+    margin-bottom: 10px; }
+  .supplement h3 {
+    margin-top: 0; }
+  .supplement figure {
+    float: left;
+    margin: 0 20px -10px 0;
+    width: 130px;
+    overflow: hidden; }
+    .supplement figure img {
+      margin-bottom: 10px; }
+    .supplement figure img:hover {
+      box-shadow: 0 0 10px #555; }
+  .supplement .btn-primary {
+    width: 130px !important;
+    height: 40px;
+    padding-top: 10px; }
+
 /**************************SUBSCRIPTION********************************/
 #subscribeForm * {
   padding-left: 0; }

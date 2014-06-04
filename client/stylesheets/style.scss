@@ -493,6 +493,22 @@ input#searchField {
 		box-shadow: 0 0 10px #555;
 	}
 }
+/****************************LIBRARY***********************************/
+.supplement {
+	margin-bottom: 40px;
+	p { margin-bottom: 10px; }
+	h3 { margin-top: 0; }
+	figure { 
+		float: left; margin: 0 20px -10px 0; width: 130px; overflow: hidden;
+		img { margin-bottom: 10px; }
+		img:hover {
+		box-shadow: 0 0 10px #555;
+	}
+	}
+	.btn-primary { 
+		width: 130px !important; height: 40px; padding-top: 10px;
+	}
+}
 /**************************SUBSCRIPTION********************************/
 #subscribeForm{
 	& * { padding-left: 0; }
