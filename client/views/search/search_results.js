@@ -1,9 +1,3 @@
-Template.searchResults.rendered = function () {
-	$.getScript( '/javascript/jdd.js');
-	$.getScript( '/javascript/sidebar.js');
-	$.getScript( '/javascript/nav.js');
-};
-
 var pathArray;
 var results = [
 	{ title: "Use of Dermoscopy to Monitor Melanoctic Lesions: Risks and Benefits",

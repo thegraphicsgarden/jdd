@@ -1,0 +1,50 @@
+var months = ["January", "February", "March", "April", "May",
+ "June", "July", "August", "September", "October",
+ "November", "December"];
+var years = [2012,2011,2010,2009];
+var allIssues = [];
+
+var indices = []
+
+reverseArray = function(array) {
+	var start = 0; var end = array.length - 1;
+	var temp = [];
+
+	for(var i = start; i <= end; i++) {
+		temp.push(array[end-i]);
+	}
+	return temp;
+};
+months = reverseArray(months);
+
+createIssues = function() {
+	var endYears = years.length;
+	var endMonths = months.length;
+	var startMonths = 0;
+	for(var i = 0; i < endYears; i++) {
+		var yearEntry = { "year": years[i], "volume": endYears-i,  "issues": [] };
+		if(years[i] == "2014") {
+			startMonths = 8; endMonths = 12;
+		} else {
+			startMonths = 0; endMonths = months.length;
+		}
+		for(var j = startMonths; j < endMonths; j++) {
+			var monthEntry = { "month": months[j], "issue": endMonths-j};
+			yearEntry.issues.push(monthEntry);
+		}			
+		allIssues.push(yearEntry);
+	}
+	console.log(allIssues);
+	return allIssues;
+};
+
+Template.indexArchives.helpers({
+	years: years
+});
+
+Handlebars.registerHelper("greaterThan2010", function (year) {
+	return year > 2010;
+});
+Handlebars.registerHelper("not2014", function (year) {
+	return year != 2014;
+});

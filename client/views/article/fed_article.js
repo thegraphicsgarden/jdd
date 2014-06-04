@@ -39,8 +39,5 @@ Template.fedArticle.helpers({
 });
 
 Template.fedArticle.rendered = function () {
-	$.getScript( 'javascript/jdd.js');
-	$.getScript( 'javascript/sidebar.js');
-	$.getScript( 'javascript/nav.js');
 	$.getScript( 'javascript/article_helper.js');
 };
