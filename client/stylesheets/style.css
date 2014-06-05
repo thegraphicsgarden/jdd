@@ -576,6 +576,46 @@ ul#pagination {
         margin-bottom: 10px;
         display: none; }
 
+/*******************************EJDD ARTICLE*********************************/
+.leftPage, .rightPage {
+  height: 700px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-perspective: 2000px;
+  /* Chrome, Safari, Opera  */
+  perspective: 2000px; }
+  .leftPage:hover, .rightPage:hover {
+    cursor: pointer; }
+  .leftPage .page, .rightPage .page {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none; }
+  .leftPage .page.active, .rightPage .page.active {
+    display: block;
+    z-index: 1; }
+  .leftPage .page.becomingActive, .rightPage .page.becomingActive {
+    display: block;
+    z-index: 0; }
+
+.leftPage .page {
+  background-image: linear-gradient(to right, white 85%, white 95%);
+  transform-origin: 100% 0%;
+  -webkit-transform-origin: 100% 0%;
+  -webkit-transform: rotateY(0deg);
+  /* Chrome, Safari, Opera  */
+  transform: rotateY(0deg); }
+
+.rightPage .page {
+  background-image: linear-gradient(to right, #fbfbfb 5%, white 15%);
+  transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -webkit-transform: rotateY(0deg);
+  /* Chrome, Safari, Opera  */
+  transform: rotateY(0deg); }
+
 /*******************************SEARCH*********************************/
 .searchArchives h4 {
   margin: 10px auto; }
