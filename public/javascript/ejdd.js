@@ -10,64 +10,100 @@
 
 	setup = function() {
 		$("#breadcrumbsSection").css({"margin-bottom": 0});
-		leftMiddleEdge = leftPage.position().left + leftPage.width();
-		rightMiddleEdge = rightPage.position().left;
+		leftMiddleEdge = leftPage.offset().left + leftPage.width();
+		rightMiddleEdge = rightPage.offset().left;
 	};
 
-	function setLeftAngle(deltaMouse) {
-		$angle = 90 - (90*deltaMouse);
+	function setLeftAngle(turnRatio) {
+		$angle = 90 - (90*turnRatio);
 		if($angle > 90) $angle = 90;
 		else if($angle < 0) $angle = 0;
-		//console.log($angle);
 		return $angle;
 	};
-	function setShadow(deltaMouse) {
-		return .2*deltaMouse*deltaMouse*deltaMouse;
+	function setRightAngle(turnRatio) {
+		$angle = -1* (90+turnRatio*90 );
+		return $angle;
+	};
+	function setShadow(turnRatio) {
+		return .2*Math.pow(turnRatio,3);
 	};
 
-	leftPage.mousedown(function() {
-		mouseStart = rightPage.offset().left - event.pageX;
-		$(document).mousemove(function() {
-			mouseDiff = leftPage.width() - (event.pageX - leftPage.offset().left);
-			deltaMouse = mouseDiff/mouseStart;
-			//console.log(mouseDiff);
-			leftPage.children(".page.active").css({
-				"-webkit-transform": "rotateY(" + setLeftAngle(deltaMouse) + "deg)",
-				"background": "whitesmoke"
-			});
-			$(".becomingActive").css({
-				"background": "rgba(0,0,0," + setShadow(deltaMouse)  + ")"
-			});
-		});
-		$(document).mouseup(function() {
-			if(deltaMouse > .2) {
 
-			}
-			else {
-				setLeftAngle
-				$(".page.active").animate({
-					"-webkit-transform": "rotateY(0deg)"
-				});
+	//turning the left page
+	function turnLeftPage(e, mouseStart, initDiff, pageNum) {
+		var curDiff = rightMiddleEdge - e.pageX;
+		var turnRatio = curDiff/initDiff;
+
+		//clip turning ratio so the pages don't fold "backwards"
+		if(turnRatio > 1) turnRatio = 1;
+		else if (turnRatio < -1) turnRatio = -1;
+
+		//console.log('leftX: ' + e.pageX + " " + mouseStart);
+		//console.log(turnRatio + " " + pageNum);
+
+		if(turnRatio > 0) {
+			leftPage.children(".page.active").css({
+				"-webkit-transform": "rotateY(" + setLeftAngle(turnRatio) + "deg)",
+				"transform": "rotateY(" + setLeftAngle(turnRatio) + "deg)"
+			});
+		} else {
+			var newPage = $("[data-page-num='" + (pageNum-1) +"']");
+			newPage.addClass("active");
+			newPage.css({
+				"-webkit-transform": "rotateY(" + setRightAngle(turnRatio) + "deg)",
+				"transform": "rotateY(" + setRightAngle(turnRatio) + "deg)",
+			})
+		}
+	};
+
+
+	//turning the right page
+	function turnRightPage(e, mouseStart, initDiff) {
+		console.log('rightX: ' + e.pageX + " " + mouseStart);
+		console.log(initDiff);
+	};
+
+	var leftClicked, pageNum;
+	function trackMouse() {
+		//mousedown on left/right page
+		leftPage.add(rightPage).on("mousedown touchstart", function(e) {
+			$(document).data('mousedown', true);
+			mouseStart = e.pageX;
+			pageNum = $(this).children(".active").attr("data-page-num");
+
+			($(this).hasClass("leftPage")) ? 
+				leftClicked = true : leftClicked = false;
+			
+			//if left page clicked
+			if (leftClicked) { 
+				initDiff = rightMiddleEdge - mouseStart;
+				//handle leftside
+				$("[data-page-num='" + (pageNum-2) +"']").addClass("becomingActive");
+				//handle rightside
+				rightPage.children(".active").removeClass("active").addClass("becomingActive");
+			} 
+			//if right page clicked
+			else { 
+				initDiff = mouseStart - rightMiddleEdge;
 			}
 		});
-	});
-	rightPage.mousedown(function() {
-		mouseStart = event.pageX - rightPage.offset().left;
-		$(document).mousemove(function() {
-			mouseDiff = event.pageX - rightPage.offset().left;
-			deltaMouse = mouseDiff/mouseStart;
-			//console.log("right: " + mouseDiff/mouseStart);
-			rightPage.children(".page.active").css({
-				"-webkit-transform": "rotateY(" + -1*setLeftAngle(deltaMouse) + "deg)",
-				"background": "whitesmoke"
-			});
-			$(".becomingActive").css({
-				"background": "rgba(0,0,0," + setShadow(deltaMouse)  + ")"
-			});
+
+		//mouse up anywhere
+		$(document).on("mouseup touchend", function() {
+			$(document).data('mousedown', false);
 		});
-	});
+
+		//mousemove after left/right page click
+		$(document).on("mousemove touchmove", function(e) {
+			if($(document).data('mousedown')) {
+				(leftClicked) ? 
+					turnLeftPage(e, mouseStart, initDiff, pageNum) : 
+					turnRightPage(e, mouseStart, initDiff, pageNum);
+			}
+		});
+	}
 
 	//initiate margin-top for nav at document ready || window resize
-	$(document).ready(function() { setup(); });
+	$(document).ready(function() { setup(); trackMouse(); });
 	$(window).resize(function() { setup(); });
 })(jQuery);

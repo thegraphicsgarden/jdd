@@ -584,7 +584,13 @@ ul#pagination {
   position: relative;
   -webkit-perspective: 2000px;
   /* Chrome, Safari, Opera  */
-  perspective: 2000px; }
+  perspective: 2000px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   .leftPage:hover, .rightPage:hover {
     cursor: pointer; }
   .leftPage .page, .rightPage .page {
@@ -601,7 +607,8 @@ ul#pagination {
     z-index: 0; }
 
 .leftPage .page {
-  background-image: linear-gradient(to right, white 85%, white 95%);
+  background: white;
+  /*background-image: linear-gradient( to right, #fff 85%, #fff 95% );*/
   transform-origin: 100% 0%;
   -webkit-transform-origin: 100% 0%;
   -webkit-transform: rotateY(0deg);
@@ -609,7 +616,8 @@ ul#pagination {
   transform: rotateY(0deg); }
 
 .rightPage .page {
-  background-image: linear-gradient(to right, #fbfbfb 5%, white 15%);
+  background: white;
+  /*background-image: linear-gradient( to right, #fbfbfb 5%, #fff 15% );*/
   transform-origin: 0% 0%;
   -webkit-transform-origin: 0% 0%;
   -webkit-transform: rotateY(0deg);

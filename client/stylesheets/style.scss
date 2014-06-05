@@ -458,7 +458,12 @@ ul#pagination {
 	height: 700px; padding: 0; overflow: hidden; position: relative;
 	-webkit-perspective:2000px; /* Chrome, Safari, Opera  */
 			perspective:2000px;
-
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	&:hover {
 		cursor: pointer;
 	}
@@ -470,7 +475,8 @@ ul#pagination {
 }
 .leftPage {
 	.page { 
-	 background-image: linear-gradient( to right, #fff 85%, #fff 95% );
+		background: white;
+	 /*background-image: linear-gradient( to right, #fff 85%, #fff 95% );*/
 		transform-origin: 100% 0%;
        -webkit-transform-origin: 100% 0%;
 		-webkit-transform: rotateY(0deg); /* Chrome, Safari, Opera  */
@@ -478,8 +484,9 @@ ul#pagination {
 	}
 }
 .rightPage {
-	.page { 
-	 background-image: linear-gradient( to right, #fbfbfb 5%, #fff 15% );
+	.page {
+		background: white; 
+	 /*background-image: linear-gradient( to right, #fbfbfb 5%, #fff 15% );*/
 		transform-origin: 0% 0%;
        -webkit-transform-origin: 0% 0%;
 		-webkit-transform: rotateY(0deg); /* Chrome, Safari, Opera  */
