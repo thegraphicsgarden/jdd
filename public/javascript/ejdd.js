@@ -5,8 +5,8 @@
 	var mouseIsDown = false;
 	var ct = 0;
 
-	var leftMiddleEdge;
-	var rightMiddleEdge;
+	var leftMiddleEdge, rightMiddleEdge;
+	var turnRatio;
 
 	setup = function() {
 		$("#breadcrumbsSection").css({"margin-bottom": 0});
@@ -32,14 +32,11 @@
 	//turning the left page
 	function turnLeftPage(e, mouseStart, initDiff, pageNum) {
 		var curDiff = rightMiddleEdge - e.pageX;
-		var turnRatio = curDiff/initDiff;
+		turnRatio = curDiff/initDiff;
 
 		//clip turning ratio so the pages don't fold "backwards"
 		if(turnRatio > 1) turnRatio = 1;
 		else if (turnRatio < -1) turnRatio = -1;
-
-		//console.log('leftX: ' + e.pageX + " " + mouseStart);
-		//console.log(turnRatio + " " + pageNum);
 
 		if(turnRatio > 0) {
 			leftPage.children(".page.active").css({
@@ -59,8 +56,54 @@
 
 	//turning the right page
 	function turnRightPage(e, mouseStart, initDiff) {
-		console.log('rightX: ' + e.pageX + " " + mouseStart);
-		console.log(initDiff);
+		var curDiff = rightMiddleEdge - e.pageX;
+		turnRatio = curDiff/initDiff;
+
+		//clip turning ratio so the pages don't fold "backwards"
+		if(turnRatio > 1) turnRatio = 1;
+		else if (turnRatio < -1) turnRatio = -1;
+
+		//console.log(turnRatio);
+
+		if(turnRatio < 0) {
+			rightPage.children(".page.active").css({
+				"-webkit-transform": "rotateY(" + setRightAngle(turnRatio) + "deg)",
+				"transform": "rotateY(" + setRightAngle(turnRatio) + "deg)"
+			});
+		} else {
+			var newPage = $("[data-page-num='" + (pageNum+1) +"']");
+			newPage.addClass("active");
+			newPage.css({
+				"-webkit-transform": "rotateY(" + setLeftAngle(turnRatio) + "deg)",
+				"transform": "rotateY(" + setLeftAngle(turnRatio) + "deg)",
+			});
+		}
+	};
+
+	function completeTurn() {
+		var turning;
+		if(leftClicked) {
+
+		} else {
+			$activeRight = rightPage.children(".active");
+			$rightAngle = $activeRight.css("-webkit-transform");
+			//console.log(turnRatio);
+
+			//while(turnRatio < 0) {
+				turning = setTimeout(function() {
+					turnRatio = turnRatio + .05;
+					console.log(turnRatio);
+					$activeRight.css({
+						"-webkit-transform": "rotateY(" + setRightAngle(turnRatio) + "deg)",
+						"transform": "rotateY(" + setRightAngle(turnRatio) + "deg)"
+					});
+				}, 400, function() {
+					if(turnRatio < 0) turning();
+					else return false;
+				});
+			//}
+			console.log("done");
+		}
 	};
 
 	var leftClicked, pageNum;
@@ -69,10 +112,9 @@
 		leftPage.add(rightPage).on("mousedown touchstart", function(e) {
 			$(document).data('mousedown', true);
 			mouseStart = e.pageX;
-			pageNum = $(this).children(".active").attr("data-page-num");
+			pageNum = parseInt($(this).children(".active").attr("data-page-num"));
 
-			($(this).hasClass("leftPage")) ? 
-				leftClicked = true : leftClicked = false;
+			($(this).hasClass("leftPage")) ? leftClicked = true : leftClicked = false;
 			
 			//if left page clicked
 			if (leftClicked) { 
@@ -85,20 +127,26 @@
 			//if right page clicked
 			else { 
 				initDiff = mouseStart - rightMiddleEdge;
+				//handle rightside
+				$("[data-page-num='" + (pageNum+2) +"']").addClass("becomingActive");
+				//handle leftside
+				leftPage.children(".active").removeClass("active").addClass("becomingActive");
 			}
 		});
 
 		//mouse up anywhere
 		$(document).on("mouseup touchend", function() {
 			$(document).data('mousedown', false);
+			console.log("up: " + turnRatio);
+			(Math.abs(turnRatio) < .8) ? completeTurn() : resetPage();
 		});
 
 		//mousemove after left/right page click
 		$(document).on("mousemove touchmove", function(e) {
 			if($(document).data('mousedown')) {
 				(leftClicked) ? 
-					turnLeftPage(e, mouseStart, initDiff, pageNum) : 
-					turnRightPage(e, mouseStart, initDiff, pageNum);
+				turnLeftPage(e, mouseStart, initDiff, pageNum) : 
+				turnRightPage(e, mouseStart, initDiff, pageNum);
 			}
 		});
 	}

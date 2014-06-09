@@ -468,10 +468,11 @@ ul#pagination {
 		cursor: pointer;
 	}
 	.page { 
-		padding: 20px; height: 100%; width: 100%; position: absolute; display: none;
+		padding: 20px; height: 100%; width: 100%; position: absolute; /*display: none;*/ z-index: 0;
 	}
 	.page.active { display: block; z-index: 1; }
-	.page.becomingActive { display: block; z-index: 0; }
+	.page.turning { z-index: 2; }
+	.page.becomingActive { display: block; /*z-index: 0;*/ }
 }
 .leftPage {
 	.page { 
@@ -492,6 +493,89 @@ ul#pagination {
 		-webkit-transform: rotateY(0deg); /* Chrome, Safari, Opera  */
 				transform: rotateY(0deg);
 	}
+}
+#prev, #next { 
+	&:hover {
+		cursor: pointer;
+	}
+}
+.leftFlatToVert {
+	-webkit-animation: turnLeftToRight .5s linear;
+    -moz-animation: turnLeftToRight .5s linear;
+    animation: turnLeftToRight .5s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+@-moz-keyframes turnLeftToRight { 
+	0% { -moz-transform: rotateY(0deg); } 
+	100% { -moz-transform: rotateY(90deg); } 
+}
+@-webkit-keyframes turnLeftToRight { 
+	0% { -webkit-transform: rotateY(0deg); } 
+	100% { -webkit-transform: rotateY(90deg); } 
+}
+@keyframes turnLeftToRight { 
+	0% { -webkit-transform: rotateY(0deg); } 
+	100% { -webkit-transform: rotateY(90deg); transform:rotateY(90deg); }
+}
+.rightVertToFlat {
+	-webkit-animation: turnRightToLeftPrev 1s linear;
+    -moz-animation: turnRightToLeftPrev 1s linear;
+    animation: turnRightToLeftPrev 1s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+@-moz-keyframes turnRightToLeftPrev { 
+	0% { -moz-transform: rotateY(-90deg); } 
+	50% { -moz-transform: rotateY(-90deg); } 
+	100% { -moz-transform: rotateY(0deg); } 
+}
+@-webkit-keyframes turnRightToLeftPrev { 
+	0% { -webkit-transform: rotateY(-90deg); }
+	50% { -webkit-transform: rotateY(-90deg); } 
+	100% { -webkit-transform: rotateY(0deg); } 
+}
+@keyframes turnRightToLeftPrev { 
+	0% { -webkit-transform: rotateY(-90deg); }
+	50% { -webkit-transform: rotateY(-90deg); } 
+	100% { -webkit-transform: rotateY(0deg); transform:rotateY(0deg); }
+}
+.rightFlatToVert {
+	-webkit-animation: turnRightToLeft .5s linear;
+    -moz-animation: turnRightToLeft .5s linear;
+    animation: turnRightToLeft .5s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+@-moz-keyframes turnRightToLeft { 
+	0% { -moz-transform: rotateY(0deg); } 
+	100% { -moz-transform: rotateY(-90deg); } 
+}
+@-webkit-keyframes turnRightToLeft { 
+	0% { -webkit-transform: rotateY(0deg); } 
+	100% { -webkit-transform: rotateY(-90deg); } 
+}
+@keyframes turnRightToLeft { 
+	0% { -webkit-transform: rotateY(0deg); } 
+	100% { -webkit-transform: rotateY(-90deg); transform:rotateY(-90deg); }
+}
+.leftVertToFlat {
+	-webkit-animation: turnRightToLeftNext 1s linear;
+    -moz-animation: turnRightToLeftNext 1s linear;
+    animation: turnRightToLeftNext 1s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+@-moz-keyframes turnRightToLeftNext { 
+	0% { -moz-transform: rotateY(90deg); } 
+	50% { -moz-transform: rotateY(90deg); } 
+	100% { -moz-transform: rotateY(0deg); } 
+}
+@-webkit-keyframes turnRightToLeftNext { 
+	0% { -webkit-transform: rotateY(90deg); }
+	50% { -webkit-transform: rotateY(90deg); } 
+	100% { -webkit-transform: rotateY(0deg); } 
+}
+@keyframes turnRightToLeftNext { 
+	0% { -webkit-transform: rotateY(90deg); }
+	50% { -webkit-transform: rotateY(90deg); } 
+	100% { -webkit-transform: rotateY(0deg); transform:rotateY(0deg); }
 }
 /*******************************SEARCH*********************************/
 $searchHeight: 40px;

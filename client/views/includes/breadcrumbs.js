@@ -1,14 +1,13 @@
-var pathArray;
-var crumbs;
+var pathArray, crumbs, path;
 var topic = "";
 
 makeCrumbs = function(endRemoveCount) {
-	$path = Router.current().path;
-	crumbs = $path.split( "/" );
+	path = Router.current().path;
+	crumbs = path.split( "/" );
 	pathArray = crumbs;
 	crumbs = crumbs.slice(0,crumbs.length - endRemoveCount);
 	//console.log("makin' crumbs! " );
-	//console.log(crumbs);
+	console.log(path);
 	return crumbs;
 };
 
@@ -32,4 +31,8 @@ Template.breadcrumbs.helpers({
 	topic: function() {
 		return hasTopic(pathArray);
 	}
+});
+
+Handlebars.registerHelper("ejdd", function (year) {
+	return path == "/ejdd-article";
 });

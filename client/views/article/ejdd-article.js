@@ -3,7 +3,8 @@ Template.ejddArticle.helpers({
 });
 
 Template.ejddArticle.rendered = function () {
-	$.getScript( '/javascript/ejdd.js');
+	$.getScript( '/javascript/flip.js');
+	//$.getScript( '/javascript/ejdd.js');
 	/*$.getScript( '/javascript/thirdparty/core.string.js');
 	$.getScript( '/javascript/thirdparty/jquery.flips.js');
 	$.getScript( '/javascript/thirdparty/jquery.history.js');
